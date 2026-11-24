@@ -8,7 +8,9 @@ import { EffectComposer, DepthOfField, Bloom, Vignette } from "@react-three/post
 import { LineSegments2 } from "three/examples/jsm/lines/LineSegments2.js";
 import { LineSegmentsGeometry } from "three/examples/jsm/lines/LineSegmentsGeometry.js";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
-import { Easing, useCurrentFrame, useVideoConfig } from "remotion";
+import { Easing, useCurrentFrame, useVideoConfig, getInputProps } from "remotion";
+const Q = getInputProps() as { fx?: number; shadows?: number; sm?: number };   // переключатели для быстрого рендера без видеокарты
+const SM = Q.sm ?? 2048;
 import { CH, CW, PLANE_H, PLANE_W, drawDoodle, Look, Pose } from "./doodle";
 
 export const FPS = 30;
@@ -315,18 +317,18 @@ export type LightPreset = "day" | "night" | "studio" | "outdoor" | "flash";
 const Lights: React.FC<{ preset: LightPreset; windowX: number }> = ({ preset, windowX }) => (
   preset === "day" ? (<>
     <hemisphereLight args={["#d6e6ff", "#3a3a5a", 0.9]} />
-    <directionalLight position={[windowX - 3, 4.5, 1.5]} intensity={2.6} color="#ffd9a8" castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048}
+    <directionalLight position={[windowX - 3, 4.5, 1.5]} intensity={2.6} color="#ffd9a8" castShadow shadow-mapSize-width={SM} shadow-mapSize-height={SM}
       shadow-radius={8} shadow-bias={-0.0005} shadow-camera-left={-5} shadow-camera-right={5} shadow-camera-top={5} shadow-camera-bottom={-5} />
     <directionalLight position={[3, 2.5, 5]} intensity={0.7} color="#cfe0ff" />
     <pointLight position={[0.4, 2.75, -0.3]} intensity={5} decay={1.4} color="#fff0d8" />
   </>) : preset === "outdoor" ? (<>
     <hemisphereLight args={["#dcecff", "#4a5a3a", 1.1]} />
-    <directionalLight position={[-4, 7, 4]} intensity={2.4} color="#ffe2b8" castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048}
+    <directionalLight position={[-4, 7, 4]} intensity={2.4} color="#ffe2b8" castShadow shadow-mapSize-width={SM} shadow-mapSize-height={SM}
       shadow-radius={8} shadow-bias={-0.0005} shadow-camera-left={-8} shadow-camera-right={8} shadow-camera-top={8} shadow-camera-bottom={-8} />
     <directionalLight position={[4, 3, 6]} intensity={0.8} color="#cfe0ff" />
   </>) : preset === "night" ? (<>
     <hemisphereLight args={["#5a6fb0", "#0c1430", 0.6]} />
-    <directionalLight position={[windowX - 3, 4, 1]} intensity={1.4} color="#7d95ff" castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} shadow-radius={8}
+    <directionalLight position={[windowX - 3, 4, 1]} intensity={1.4} color="#7d95ff" castShadow shadow-mapSize-width={SM} shadow-mapSize-height={SM} shadow-radius={8}
       shadow-camera-left={-5} shadow-camera-right={5} shadow-camera-top={5} shadow-camera-bottom={-5} />
     <pointLight position={[0.5, 1.6, 0.6]} intensity={7} decay={1.3} color="#ffc477" castShadow />
   </>) : preset === "flash" ? (<>
@@ -350,18 +352,18 @@ export const Scene3D: React.FC<{ t0: number; cam: CamKey[]; focus: V3; light?: L
     pos.x += Math.sin(frame / 23) * 0.012; pos.y += Math.sin(frame / 17) * 0.008;   // «ручная» камера
     return (
       <ShotCtx.Provider value={{ t0, cam: pos }}>
-        <ThreeCanvas width={width} height={height} shadows={{ type: THREE.PCFSoftShadowMap }}
+        <ThreeCanvas width={width} height={height} shadows={Q.shadows === 0 ? false : { type: Q.shadows === 1 ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap }}
           gl={{ toneMapping: THREE.AgXToneMapping, toneMappingExposure: 1.25, antialias: false }} style={{ backgroundColor: bg }}>
           <ShotCtx.Provider value={{ t0, cam: pos }}>
             <color attach="background" args={[bg]} />
             <CamRig pos={pos} look={new THREE.Vector3(...l)} fov={fov ?? 50} />
             <Lights preset={light} windowX={windowX} />
             {children}
-            <EffectComposer multisampling={4}>
+            {Q.fx === 0 ? null : Q.fx === 2 ? <EffectComposer multisampling={0}><Vignette eskil={false} offset={0.25} darkness={0.45} /></EffectComposer> : <EffectComposer multisampling={Q.fx === 1 ? 0 : 4}>
               <DepthOfField target={focus} focalLength={0.012} bokehScale={blur} height={1080} />
               <Bloom luminanceThreshold={1.0} intensity={0.35} mipmapBlur />
               <Vignette eskil={false} offset={0.25} darkness={0.45} />
-            </EffectComposer>
+            </EffectComposer>}
           </ShotCtx.Provider>
         </ThreeCanvas>
       </ShotCtx.Provider>
