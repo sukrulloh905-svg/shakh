@@ -222,6 +222,7 @@ export type Actor = {
   hip?: number;                              // таз ниже 0.3 — поза «сидит на земле»
   rise?: Key[];                              // [[сек, высота над полом, 0]] — полёт
   bob?: number;                              // покачивание в воздухе (м)
+  face?: number;                             // фиксированный поворот (рад) — для персонажа «в телевизоре»
 };
 // Жест «указать» в сторону (dx, dz) от плеча: замах → выброс → удержание → возврат.
 export const pointKeys = (t: number, dx: number, dz: number, hold = 1.0, side: "f" | "b" = "f"): Key[] => {
@@ -270,7 +271,7 @@ export const Doodle: React.FC<{ a: Actor }> = ({ a }) => {
   drawDoodle(canvas.getContext("2d")!, a.look, pose, rnd);
   tex.needsUpdate = true;
   const pos = st.pos;
-  const yaw = Math.atan2(cam.x - pos[0], cam.z - pos[2]);
+  const yaw = a.face ?? Math.atan2(cam.x - pos[0], cam.z - pos[2]);
   return (
     <mesh position={[pos[0], pos[1] + PLANE_H / 2, pos[2]]} rotation={[0, yaw, 0]} receiveShadow>
       <planeGeometry args={[PLANE_W, PLANE_H]} />
@@ -288,7 +289,7 @@ export const Held: React.FC<{ a: Actor; side: "f" | "b"; off?: V3; when?: [numbe
   if (a.hidden?.some(([s, e]) => t >= s && t < e)) return null;
   const { pos, hF, hB } = actorAt(a, t);
   const h = side === "f" ? hF : hB;
-  const yaw = Math.atan2(cam.x - pos[0], cam.z - pos[2]);
+  const yaw = a.face ?? Math.atan2(cam.x - pos[0], cam.z - pos[2]);
   const rx = Math.cos(yaw), rz = -Math.sin(yaw), nx = Math.sin(yaw), nz = Math.cos(yaw);
   const p: V3 = [pos[0] + rx * (h[0] + off[0]) + nx * (0.07 + off[2]), pos[1] + h[1] + off[1], pos[2] + rz * (h[0] + off[0]) + nz * (0.07 + off[2])];
   return <group position={p} rotation={[0, yaw, 0]}>{children}</group>;
