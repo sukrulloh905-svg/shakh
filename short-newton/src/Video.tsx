@@ -370,7 +370,7 @@ export const Video: React.FC = () => {
       ))}
       <Flash />
       <Audio src={staticFile(plan.voice)} />
-      <Audio src={staticFile("music.wav")} loop
+      <Audio src={staticFile("music.mp3")} loop
         volume={(f) => interpolate(f, [0, 20, durationInFrames - 75, durationInFrames], [0, 0.11, 0.11, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })} />
       <Caption />
     </AbsoluteFill>

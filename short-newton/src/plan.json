@@ -2,7 +2,7 @@
  "fps": 30,
  "total": 4288,
  "video": "video.mp4",
- "voice": "voice.wav",
+ "voice": "voice.mp3",
  "music": "music.wav",
  "mix": {
   "voice": 1,
