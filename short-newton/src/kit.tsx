@@ -9,7 +9,7 @@ import { LineSegments2 } from "three/examples/jsm/lines/LineSegments2.js";
 import { LineSegmentsGeometry } from "three/examples/jsm/lines/LineSegmentsGeometry.js";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
 import { Easing, useCurrentFrame, useVideoConfig, getInputProps } from "remotion";
-const Q = getInputProps() as { fx?: number; shadows?: number; sm?: number };   // переключатели для быстрого рендера без видеокарты
+const Q = getInputProps() as { fx?: number; shadows?: number; sm?: number; lines?: number };   // переключатели для быстрого рендера без видеокарты
 const SM = Q.sm ?? 2048;
 import { CH, CW, PLANE_H, PLANE_W, drawDoodle, Look, Pose } from "./doodle";
 
@@ -35,7 +35,7 @@ export const Box: React.FC<{ p: V3; s: V3; c: string; r?: number; rot?: V3; e?: 
   ({ p, s, c, r = 0.75, rot = [0, 0, 0], e, ei = 0, metal = 0, line = true, shadow = true, map = null }) => {
     const { size } = useThree();
     const edges = useMemo(() => {
-      if (!line) return null;
+      if (!line || Q.lines === 0) return null;
       const eg = new THREE.EdgesGeometry(new THREE.BoxGeometry(...s));
       return new LineSegments2(new LineSegmentsGeometry().setPositions(eg.attributes.position.array as Float32Array), getLineMat(size.width, size.height));
     }, [line, s[0], s[1], s[2]]);

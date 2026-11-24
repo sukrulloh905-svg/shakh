@@ -136,7 +136,7 @@ const Apple7: React.FC = () => {
 const Shot7 = () => (<><Garden /><Apple7 /><Doodle a={S7_n} /><NewtonBook a={S7_n} /><Quill a={S7_n} /><Doodle a={S7_me} /></>);
 
 // 8. Подкидываешь яблоко перед носом — он переворачивает страницу
-const S8_me = me({ pos: [0.15, 0, -0.5], expr: [[48.13, "grin"], [49.7, "smug"], [50.5, "laugh"], [51.7, "realize"], [52.7, "stern"]], handF: [[48.13, -0.3, 0.6], [48.6, -0.48, 0.8]] });
+const S8_me = me({ pos: [0.3, 0, -0.5], expr: [[48.13, "grin"], [49.7, "smug"], [50.5, "laugh"], [51.7, "realize"], [52.7, "stern"]], handF: [[48.13, -0.3, 0.6], [48.6, -0.62, 0.8]] });
 const S8_n = newton({ expr: [[48.13, "focus"], [50.5, "blank"], [51.7, "focus"], [52.7, "blank"]], handB: [...writing(48.13, 51.6), [51.9, 0.16, 0.36], ...writing(52.6, 54)] });
 const Apple8: React.FC = () => {
   const sec = useSec();
@@ -215,12 +215,12 @@ const Spoon: React.FC<{ a: Actor }> = ({ a }) => <Held a={a} side="b" off={[0, 0
 const Shot13 = () => (<><Kitchen /><Tea /><Doodle a={S13_me} /><Spoon a={S13_me} /><Cat p={[1.4, 2.96, -0.8]} rot={[Math.PI, 0.4, 0]} sleep /></>);
 
 // 14. Телевизор: учёный «Почему предметы иногда падают — неизвестно» и уплывает из кадра
-const S14_me = me({ pos: [-0.35, 0, -0.45], expr: [[82.95, "blank"], [84.5, "realize"], [85.6, "stern"], [86.8, "blank"], [88.1, "shock"], [89.0, "holdlaugh"]] });
+const S14_me = me({ pos: [0.2, 0, -0.9], expr: [[82.95, "blank"], [84.5, "realize"], [85.6, "stern"], [86.8, "blank"], [88.1, "shock"], [89.0, "holdlaugh"]] });
 const S14_sc: Actor = { pos: [0, 0, 0], seed: 9, look: SCIENTIST, expr: [[82.95, "stern"], [84.5, "realize"], [85.6, "nervous"], [86.8, "blank"], [88.1, "shock"]], talk: [[84.0, 87.4]], rise: [[87.6, 0, 0], [89.7, 2.3, 0]], bob: 0.02 };
 const Shot14 = () => (<>
   <Kitchen /><group position={[0.1, 0.77, 0.45]}><Box p={[0, 0.06, 0]} s={[0.12, 0.13, 0.12]} c="#d64545" /></group>
   <Cat p={[1.4, 2.96, -0.8]} rot={[Math.PI, 0.4, 0]} sleep />
-  <group position={[2.0, 1.4, -1.83]} scale={0.34}><Doodle a={S14_sc} /></group>
+  <group position={[2.0, 1.38, -1.83]} scale={0.36}><Doodle a={S14_sc} /></group>
   <Doodle a={S14_me} />
 </>);
 
@@ -256,7 +256,7 @@ const Shot18Inner: React.FC = () => {
 };
 
 // 19. Кабинет Ньютона: яблоко и Луну тянет одна сила; «Начала» (1687); полёты к Луне, спутники
-const S19_n: Actor = { pos: [-0.45, 0, -0.45], seed: 7, look: NEWTON_LOOK, expr: [[111.87, "blank"], [112.7, "realize"], [113.5, "proud"], [114.8, "smug"], [115.6, "grin"], [117.2, "proud"], [118.7, "shock"], [120.0, "laugh"], [121.3, "proud"]],
+const S19_n: Actor = { pos: [-0.6, 0, -0.85], seed: 7, look: NEWTON_LOOK, expr: [[111.87, "blank"], [112.7, "realize"], [113.5, "proud"], [114.8, "smug"], [115.6, "grin"], [117.2, "proud"], [118.7, "shock"], [120.0, "laugh"], [121.3, "proud"]],
   handF: [[111.87, ...REST_F], [112.6, -0.32, 0.82]], handB: pointKeys(113.6, 0.8, 1.0, 1.4, "b") };
 const Shot19Inner: React.FC = () => {
   const sec = useSec();
@@ -321,18 +321,18 @@ const SHOTS: Shot[] = [
   { t0: 63.16, t1: 68.23, el: <Scene3D t0={63.16} light="outdoor" bg={SKY} cam={[C(63.16, [0.6, 1.5, 2.6], [-2.1, 1.3, -3.0], 52), C(68.23, [0.1, 1.35, 2.0], [-1.4, 1.0, -1.8], 50)]} focus={[-1.6, 0.9, -2.0]}><Shot11 /></Scene3D> },
   { t0: 68.23, t1: 76.97, el: <Scene3D t0={68.23} light="outdoor" bg={SKY} cam={[C(68.23, [-0.8, 1.4, 3.6], [-0.4, 1.7, -1.4], 52), C(72.3, [0.2, 1.4, 3.3], [0.9, 1.3, -1.5], 50), C(74.6, [0.3, 1.1, 2.7], [0.2, 0.7, -1.2], 48), C(76.97, [0.2, 1.05, 2.5], [0, 0.65, -1.2], 48)]} focus={[0.2, 0.9, -1.3]}><Shot12 /></Scene3D> },
   { t0: 76.97, t1: 82.95, el: <Scene3D t0={76.97} cam={[C(76.97, [1.7, 1.6, 3.2], [0.0, 1.35, -0.6], 52), C(82.95, [1.1, 1.65, 2.9], [0.3, 1.6, -0.6], 52)]} focus={[0, 1.1, -0.6]}><Shot13 /></Scene3D> },
-  { t0: 82.95, t1: 89.74, el: <Scene3D t0={82.95} cam={[C(82.95, [0.0, 1.35, 2.0], [1.4, 1.35, -1.4], 48), C(89.74, [0.25, 1.4, 1.7], [1.6, 1.55, -1.6], 48)]} focus={[1.6, 1.4, -1.6]}><Shot14 /></Scene3D> },
+  { t0: 82.95, t1: 89.74, el: <Scene3D t0={82.95} cam={[C(82.95, [-0.6, 1.4, 2.4], [1.2, 1.25, -1.3], 44), C(89.74, [-0.3, 1.45, 2.1], [1.4, 1.45, -1.5], 42)]} focus={[1.2, 1.3, -1.4]}><Shot14 /></Scene3D> },
   { t0: 89.74, t1: 91.1, el: <Scene3D t0={89.74} cam={[C(89.74, [-0.6, 1.3, 2.0], [-2.2, 1.0, 0.0], 48), C(91.1, [-0.75, 1.3, 1.85], [-2.2, 1.0, 0.0], 48)]} focus={[-2.3, 0.9, 0.1]}><Shot15a /></Scene3D> },
   { t0: 91.1, t1: 96.45, el: <Scene3D t0={91.1} light="outdoor" bg={SKY} cam={[C(91.1, [0.4, 1.0, 3.6], [1.0, 1.55, -1.6], 54), C(96.45, [0.7, 1.0, 3.3], [1.0, 1.75, -1.8], 54)]} focus={[0.9, 1.0, -1.4]}><Shot15b /></Scene3D> },
   { t0: 96.45, t1: 100.21, el: <Scene3D t0={96.45} light="outdoor" bg={SKY} cam={[C(96.45, [0.55, 1.15, 1.2], [0, 1.0, -1.3], 44), C(100.21, [0.35, 1.1, 0.95], [0, 0.95, -1.3], 44)]} focus={[0, 0.95, -1.3]}><Shot16 /></Scene3D> },
   { t0: 100.21, t1: 105.72, el: <Scene3D t0={100.21} cam={[C(100.21, [1.4, 1.4, 2.6], [-0.1, 0.9, -0.2], 50), C(105.72, [1.1, 1.3, 2.3], [0.0, 0.9, -0.1], 50)]} focus={[0.1, 0.85, 0.1]}><Shot17Inner /></Scene3D> },
   { t0: 105.72, t1: 111.87, el: <Scene3D t0={105.72} cam={[C(105.72, [1.3, 1.4, 2.5], [-0.2, 1.0, -0.2], 50), C(111.87, [1.0, 1.35, 2.2], [-0.1, 1.0, -0.1], 50)]} focus={[-0.4, 0.9, -0.1]}><Shot18Inner /></Scene3D> },
-  { t0: 111.87, t1: 122.42, el: <Scene3D t0={111.87} light="night" bg="#1b2a55" cam={[C(111.87, [0.5, 1.35, 2.6], [0.1, 1.25, -1.2], 50), C(116.5, [0.1, 1.3, 2.2], [0.1, 1.1, -1.1], 48), C(119.0, [0.5, 1.4, 1.9], [0.6, 1.6, -1.8], 46), C(122.42, [0.7, 1.45, 1.7], [0.7, 1.7, -1.8], 46)]} focus={[-0.2, 1.0, -0.8]}><Shot19Inner /></Scene3D> },
+  { t0: 111.87, t1: 122.42, el: <Scene3D t0={111.87} light="night" bg="#1b2a55" cam={[C(111.87, [0.5, 1.35, 2.6], [0.1, 1.25, -1.2], 50), C(116.5, [0.1, 1.3, 2.2], [0.1, 1.1, -1.1], 48), C(119.0, [0.2, 1.4, 2.4], [0.3, 1.45, -1.6], 48), C(122.42, [0.3, 1.45, 2.2], [0.35, 1.5, -1.6], 48)]} focus={[-0.5, 1.0, -0.9]}><Shot19Inner /></Scene3D> },
   { t0: 122.42, t1: 127.02, el: <Scene3D t0={122.42} cam={[C(122.42, [0.7, 1.35, 2.6], [-0.15, 1.1, -1.2], 50), C(127.02, [0.4, 1.3, 2.3], [-0.15, 1.1, -1.2], 50)]} focus={[-0.4, 1.0, -0.9]}><Shot20Inner /></Scene3D> },
   { t0: 127.02, t1: 131.99, el: <Scene3D t0={127.02} light="outdoor" bg={SKY} cam={[C(127.02, [0.35, 1.2, 1.4], [-0.1, 0.95, -1.2], 44), C(131.99, [0.2, 1.1, 1.1], [-0.2, 0.8, -1.2], 44)]} focus={[-0.1, 0.9, -1.2]}><Shot21 /></Scene3D> },
   { t0: 131.99, t1: 135.89, el: <Scene3D t0={131.99} light="outdoor" bg={SKY} cam={[C(131.99, [0.4, 0.45, 0.6], [-0.3, 0.25, -1.1], 50), C(133.6, [0.6, 0.9, 1.8], [-0.2, 0.7, -1.1], 50), C(135.89, [1.2, 1.4, 3.3], [0, 1.4, -1.2], 52)]} focus={[-0.25, 0.4, -1.15]}><Shot22 /></Scene3D> },
   { t0: 135.89, t1: 139.24, el: <Scene3D t0={135.89} light="outdoor" bg={SKY} cam={[C(135.89, [0.3, 1.2, 2.1], [0.2, 0.95, -1.3], 46), C(139.24, [0.15, 1.15, 1.85], [0.2, 0.95, -1.3], 46)]} focus={[0.2, 0.9, -1.3]}><Shot23 /></Scene3D> },
-  { t0: 139.24, t1: 147.0, el: <Scene3D t0={139.24} light="outdoor" bg={SKY} cam={[C(139.24, [0.4, 1.3, 2.6], [0.3, 1.2, -1.3], 50), C(143.0, [0.7, 2.2, 5.6], [0.9, 2.6, -2.6], 52), C(147.0, [0.8, 2.3, 5.9], [0.9, 2.7, -2.6], 52)]} focus={[0.2, 1.0, -1.3]}><Shot24 /></Scene3D> },
+  { t0: 139.24, t1: 147.0, el: <Scene3D t0={139.24} light="outdoor" bg={SKY} cam={[C(139.24, [0.4, 1.3, 2.6], [0.3, 1.2, -1.3], 50), C(142.5, [1.0, 1.9, 4.6], [1.6, 2.6, -2.6], 50), C(147.0, [1.1, 1.95, 4.8], [1.6, 2.65, -2.6], 50)]} focus={[0.2, 1.0, -1.3]}><Shot24 /></Scene3D> },
 ];
 
 // ===================================================================== вспышки «машины времени»
@@ -347,15 +347,16 @@ const Flash: React.FC = () => {
 // ===================================================================== субтитры
 const Caption: React.FC = () => {
   const f = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, width } = useVideoConfig();
+  const k = width / 1920;
   const g = plan.groups.find((x) => f >= x.start && f < Math.max(x.end, x.start + 6));
   if (!g) return null;
   const s = spring({ frame: f - g.start, fps, config: { damping: 11, stiffness: 240, mass: 0.55 } });
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 90 }}>
-      <div style={{ fontFamily, fontWeight: 900, fontSize: 84, lineHeight: 1.05, color: "white", textAlign: "center", maxWidth: 1500,
-        transform: `scale(${interpolate(s, [0, 1], [0.72, 1])})`, WebkitTextStroke: "15px black", paintOrder: "stroke fill",
-        textShadow: "0 6px 0 rgba(0,0,0,0.55)" }}>{g.text}</div>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 90 * k }}>
+      <div style={{ fontFamily, fontWeight: 900, fontSize: 84 * k, lineHeight: 1.05, color: "white", textAlign: "center", maxWidth: 1500 * k,
+        transform: `scale(${interpolate(s, [0, 1], [0.72, 1])})`, WebkitTextStroke: `${15 * k}px black`, paintOrder: "stroke fill",
+        textShadow: `0 ${6 * k}px 0 rgba(0,0,0,0.55)` }}>{g.text}</div>
     </AbsoluteFill>
   );
 };

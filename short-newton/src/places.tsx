@@ -176,10 +176,10 @@ export const Street: React.FC<{ float?: number; billboard?: boolean }> = ({ floa
     <Sign p={[-1.0, 1.35, -3.97]} w={1.5} h={0.45} text="КАФЕ" bg="#7a3b22" fg="#ffd88a" glow={0.4} />
     <Sign p={[2.2, 1.3, -3.97]} w={2.0} h={0.45} text="ПРОДУКТЫ" bg="#d64545" fg="#ffffff" glow={0.4} />
     <Sign p={[6.6, 1.3, -3.97]} w={1.7} h={0.45} text="КНИГИ" bg="#2f4fa8" fg="#ffffff" glow={0.4} />
-    {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={"ПОДПИШИСЬ\nИ СТАВЬ ЛАЙК ♥"} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={70} />
+    {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={"ПОДПИШИСЬ\nСТАВЬ ЛАЙК"} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={58} />
       : <Sign p={[2.2, 5.4, -3.97]} w={3.4} h={1.0} text={"2026"} bg="#1d2a44" fg="#7af0ff" glow={0.6} />}
     {/* фонари */}
-    {[-4.5, 0.2, 4.5].map((x) => <group key={x} position={[x, 0, -0.6]}><Box p={[0, 1.4, 0]} s={[0.08, 2.8, 0.08]} c="#3a3f46" /><Box p={[0, 2.85, 0.15]} s={[0.3, 0.1, 0.4]} c="#3a3f46" /></group>)}
+    {[-4.5, 0.6, 4.5].map((x) => <group key={x} position={[x, 0, -3.5]}><Box p={[0, 1.4, 0]} s={[0.08, 2.8, 0.08]} c="#3a3f46" /><Box p={[0, 2.85, 0.15]} s={[0.3, 0.1, 0.4]} c="#3a3f46" /></group>)}
     {/* парящие предметы: урна, скамейка, горшок — качаются в воздухе */}
     <group position={[-3.6, 0.3 + f * (1.1 + Math.sin(sec * 1.3) * 0.12), -1.4]} rotation={[0, 0, f * Math.sin(sec * 0.7) * 0.3]}><Box p={[0, 0.25, 0]} s={[0.35, 0.5, 0.35]} c="#3f8a4b" /></group>
     <group position={[3.4, f * (0.9 + Math.sin(sec * 1.1 + 1) * 0.1), -2.6]} rotation={[0, 0, f * 0.2]}><Bench p={[0, 0, 0]} w={1.4} /></group>
