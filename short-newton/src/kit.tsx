@@ -230,6 +230,8 @@ export const pointKeys = (t: number, dx: number, dz: number, hold = 1.0, side: "
   return [[t - 0.35, ...rest], [t - 0.12, sh * 0.2, HEAD_Z + 0.15], [t, sh + dx * 0.6, HIP + 0.25 + dz * 0.6], [t + hold, sh + dx * 0.6, HIP + 0.25 + dz * 0.6], [t + hold + 0.25, ...rest]];
 };
 
+// лёгкое «живое» покачивание рук
+const idle = (h: [number, number], t: number, s: number): [number, number] => [h[0] + Math.sin(t * 1.7 + s) * 0.025, h[1] + Math.sin(t * 2.3 + s * 1.7) * 0.02];
 // Положение актёра и его рук в момент t (с учётом ходьбы, полёта, позы сидя).
 export const actorAt = (a: Actor, t: number) => {
   const restF: [number, number] = a.hip != null ? [-0.2, a.hip + 0.06] : REST_F;
@@ -238,11 +240,11 @@ export const actorAt = (a: Actor, t: number) => {
   const y = (a.rise ? track(t, a.rise, true)[0] : a.pos[1]) + (a.bob ? Math.sin(t * 2.1 + a.seed) * a.bob : 0);
   return {
     pos: [xz[0], y, xz[1]] as V3,
-    hF: a.handF ? track(t, a.handF) : restF,
-    hB: a.handB ? track(t, a.handB) : restB,
+    hF: idle(a.handF ? track(t, a.handF) : restF, t, a.seed),
+    hB: idle(a.handB ? track(t, a.handB) : restB, t, a.seed + 3),
   };
 };
-const q2 = (sec: number) => Math.floor((sec * FPS) / 2) * 2 / FPS;   // анимация «по двойкам»
+const q2 = (sec: number) => sec;   // плавно: каждый кадр
 
 export const Doodle: React.FC<{ a: Actor }> = ({ a }) => {
   const sec = useSec();
@@ -263,10 +265,10 @@ export const Doodle: React.FC<{ a: Actor }> = ({ a }) => {
   const talking = a.talk?.some(([s, e]) => t >= s && t < e);
   const st = actorAt(a, t);
   const pose: Pose = {
-    expr: ex, blink: (f2 + a.seed * 37) % 79 < 3, bonk, breathe: Math.sin(f2 / 14) * 0.012, lookX: dart,
+    expr: ex, blink: (f2 + a.seed * 37) % 79 < 3, bonk, breathe: Math.sin(t * 2.2 + a.seed) * 0.015, lookX: dart,
     talk: talking ? 0.25 + 0.75 * Math.abs(Math.sin(t * FPS * Math.PI / 3.5)) : 0,
     handF: st.hF, handB: st.hB, hip: a.hip,
-    lean: a.lean ? track(t, a.lean)[0] : 0, tilt: Math.sin(t * 1.1 + a.seed) * 0.03,
+    lean: (a.lean ? track(t, a.lean)[0] : 0) + Math.sin(t * 0.9 + a.seed) * 0.045, tilt: Math.sin(t * 1.1 + a.seed) * 0.07,
   };
   drawDoodle(canvas.getContext("2d")!, a.look, pose, rnd);
   tex.needsUpdate = true;

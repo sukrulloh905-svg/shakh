@@ -53,7 +53,7 @@ export function drawDoodle(ctx: CanvasRenderingContext2D, look: Look, p: Pose, r
   ctx.clearRect(0, 0, CW, CH);
   ctx.lineCap = "round"; ctx.lineJoin = "round";
   const E = EXPR[p.expr] ?? EXPR.neutral;
-  const sq = (p.squash ?? 1) * (1 + p.breathe) * (1 - 0.07 * p.bonk);
+  const sq = (p.squash ?? 1) * (1 + p.breathe);
   const hip = (p.hip ?? HIP);
   const lean = p.lean ?? 0;
   const bh = H * sq, bw = W / Math.sqrt(sq);
@@ -92,9 +92,9 @@ export function drawDoodle(ctx: CanvasRenderingContext2D, look: Look, p: Pose, r
   const hB = p.handB ?? [W * 0.75, hip + 0.06], hF = p.handF ?? [-W * 0.75, hip + 0.06];
   // волосы-«облако» за головой (кудри/парик) — рисуются ДО тела, чтобы парик лёг на плечи
   const top = B(0, bh + R0 * 0.78);
-  const hr = R0 * (1 + 0.14 * p.bonk);
+  const hr = R0;
   const shk = E.shake ? (rnd() - 0.5) * 0.012 : 0;
-  const headT = () => { ctx.translate(X(top[0] + shk), Y(top[1] + shk)); ctx.rotate(lean * 0.7 + (p.tilt ?? 0) + 0.06 * p.bonk); };
+  const headT = () => { ctx.translate(X(top[0] + shk), Y(top[1] + shk)); ctx.rotate(lean * 0.7 + (p.tilt ?? 0)); };
   const r = hr * K;
   if (look.hair === "curly" || look.hair === "wig") {
     ctx.save(); headT();

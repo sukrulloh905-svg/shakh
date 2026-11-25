@@ -160,24 +160,23 @@ const Building: React.FC<{ x: number; w: number; h: number; c: string; z?: numbe
     </group>
   );
 };
-export const Street: React.FC<{ float?: number; billboard?: boolean }> = ({ float = 1, billboard = false }) => {
+export const Street: React.FC<{ float?: number; billboard?: boolean; lift?: number }> = ({ float = 1, billboard = false, lift = 0 }) => {
   const sec = useSec();
   const f = float;
+  const L = (k: number) => lift * (1.2 + 0.25 * k + Math.sin(sec * 1.1 + k) * 0.12);
   return (<>
     <Box p={[0, -0.05, 4]} s={[60, 0.1, 10]} c="#5d6168" line={false} r={0.9} />
     {Array.from({ length: 12 }, (_, i) => <Box key={"m" + i} p={[-15 + i * 2.6, 0.005, 2.0]} s={[1.2, 0.01, 0.12]} c="#f2f2ea" line={false} />)}
     <Box p={[0, 0.06, -2.2]} s={[60, 0.12, 4]} c="#c9c3b8" line={false} r={0.9} />
     <Box p={[0, 0.07, -0.18]} s={[60, 0.14, 0.12]} c="#a29b90" />
-    <Building x={-6.5} w={4} h={9} c="#d88a5a" /><Building x={-2.2} w={4.2} h={6.5} c="#e7c77a" />
-    <Building x={2.2} w={4.2} h={8} c="#8fb3c9" /><Building x={6.6} w={4.4} h={10} c="#c98ba0" />
-    <Building x={-4} w={4} h={14} c="#a9b6c2" z={-12} /><Building x={4} w={5} h={16} c="#b9a9c9" z={-13} />
-    <Door p={[-2.6, 0.12, -3.97]} c="#3f7a5a" number="12" />
-    <Sign p={[-6.5, 1.05, -3.97]} w={1.8} h={0.45} text="АПТЕКА" bg="#2f9e5a" fg="#ffffff" glow={0.4} />
-    <Sign p={[-1.0, 1.35, -3.97]} w={1.5} h={0.45} text="КАФЕ" bg="#7a3b22" fg="#ffd88a" glow={0.4} />
-    <Sign p={[2.2, 1.3, -3.97]} w={2.0} h={0.45} text="ПРОДУКТЫ" bg="#d64545" fg="#ffffff" glow={0.4} />
-    <Sign p={[6.6, 1.3, -3.97]} w={1.7} h={0.45} text="КНИГИ" bg="#2f4fa8" fg="#ffffff" glow={0.4} />
-    {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={"ПОДПИШИСЬ\nСТАВЬ ЛАЙК"} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={58} />
-      : <Sign p={[2.2, 5.4, -3.97]} w={3.4} h={1.0} text={"2026"} bg="#1d2a44" fg="#7af0ff" glow={0.6} />}
+    <group position={[0, L(0), 0]}><Building x={-6.5} w={4} h={9} c="#d88a5a" /><Sign p={[-6.5, 1.05, -3.97]} w={1.8} h={0.45} text="АПТЕКА" bg="#2f9e5a" fg="#ffffff" glow={0.4} /></group>
+    <group position={[0, L(1), 0]}><Building x={-2.2} w={4.2} h={6.5} c="#e7c77a" /><Door p={[-2.6, 0.12, -3.97]} c="#3f7a5a" number="12" />
+      <Sign p={[-1.0, 1.35, -3.97]} w={1.5} h={0.45} text="КАФЕ" bg="#7a3b22" fg="#ffd88a" glow={0.4} /></group>
+    <group position={[0, L(2), 0]}><Building x={2.2} w={4.2} h={8} c="#8fb3c9" /><Sign p={[2.2, 1.3, -3.97]} w={2.0} h={0.45} text="ПРОДУКТЫ" bg="#d64545" fg="#ffffff" glow={0.4} />
+      {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={"ПОДПИШИСЬ\nСТАВЬ ЛАЙК"} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={58} />
+        : <Sign p={[2.2, 5.4, -3.97]} w={3.4} h={1.0} text={"2026"} bg="#1d2a44" fg="#7af0ff" glow={0.6} />}</group>
+    <group position={[0, L(3), 0]}><Building x={6.6} w={4.4} h={10} c="#c98ba0" /><Sign p={[6.6, 1.3, -3.97]} w={1.7} h={0.45} text="КНИГИ" bg="#2f4fa8" fg="#ffffff" glow={0.4} /></group>
+    <group position={[0, L(4) * 1.5, 0]}><Building x={-4} w={4} h={14} c="#a9b6c2" z={-12} /><Building x={4} w={5} h={16} c="#b9a9c9" z={-13} /></group>
     {/* фонари */}
     {[-4.5, 0.6, 4.5].map((x) => <group key={x} position={[x, 0, -3.5]}><Box p={[0, 1.4, 0]} s={[0.08, 2.8, 0.08]} c="#3a3f46" /><Box p={[0, 2.85, 0.15]} s={[0.3, 0.1, 0.4]} c="#3a3f46" /></group>)}
     {/* парящие предметы: урна, скамейка, горшок — качаются в воздухе */}
