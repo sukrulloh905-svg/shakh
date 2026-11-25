@@ -2,7 +2,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, delayRender, continueRender } from "remotion";
 import plan from "./plan.json";
-import { FPS, Scene3D, Box, Ball, Apple, Sign, Doodle, Held, Actor, Key, pointKeys, bonkAt, useSec, at, V3, REST_F, REST_B, CamKey } from "./kit";
+import { FPS, Scene3D, Box, Ball, Apple, Sign, Doodle, Held, Actor, Key, pointKeys, bonkAt, useSec, at, V3, REST_F, REST_B, CamKey, WARP } from "./kit";
 import { Garden, Street, Kitchen, Study, Bookshop, Cat, Bird, Fridge, Briefcase, Book } from "./places";
 import type { Look } from "./doodle";
 
@@ -103,18 +103,25 @@ const ShotC = () => (<>
   <Formula t={15.1} p={[-0.3, 1.22, -1.0]} text="g = 9,8 м/с²" />
 </>);
 
-// D. Сидит под деревом, думает о жизни… и вдруг падает яблоко!
-const D_me = me({ pos: [0.6, 0, -0.55], expr: [[21.19, "neutral"], [23.2, "smug"], [25.0, "blank"], [26.9, "shock"]] });
+// D. Сидит под деревом, думает о жизни… и вдруг падает яблоко — ты ловишь его на лету!
+const D_me = me({ pos: [0.6, 0, -0.55], expr: [[21.19, "neutral"], [23.2, "smug"], [25.0, "blank"], [26.8, "shock"], [27.35, "grin"], [27.7, "laugh"]],
+  walk: [[26.6, 0.6, -0.55], [27.0, 0.3, -0.62]], handF: [[26.5, ...REST_F], [26.85, -0.42, 0.98], [27.5, -0.42, 0.98], [27.9, -0.26, 0.72]] });
 const D_n = newton({ expr: [[21.19, "blank"], [22.4, "focus"], [23.2, "smug"], [24.4, "blank"], [25.4, "focus"]], handB: [[21.19, 0.2, 0.62], [23.0, 0.2, 0.62], ...writing(23.3, 28.6)] });
-const ShotD = () => (<><Garden /><GroundApple from={26.7} /><Doodle a={D_n} /><NewtonBook a={D_n} /><Quill a={D_n} /><Doodle a={D_me} /></>);
+const DApple: React.FC = () => {
+  const sec = useSec();
+  if (sec < 26.35) return null;
+  const u = Math.min(1, (sec - 26.35) / 0.85);
+  return <Held a={D_me} side="f" off={[0, 0.03 + (1 - u * u) * 1.05, 0]}><Apple p={[0, 0, 0]} s={1.3} /></Held>;
+};
+const ShotD = () => (<><Garden /><DApple /><Doodle a={D_n} /><NewtonBook a={D_n} /><Quill a={D_n} /><Doodle a={D_me} /></>);
 
 // E. Ты понимаешь: сейчас случится важнейший момент — а Ньютон не замечает
 const E_me = me({ pos: [0.6, 0, -0.55], expr: [[28.5, "shock"], [29.4, "realize"], [30.7, "grin"], [32.4, "proud"], [34.3, "laugh"], [35.7, "proud"], [36.9, "nervous"]],
   handF: [...pointKeys(30.1, -0.8, -0.5, 1.4, "f"), ...pointKeys(35.0, -0.9, 0.2, 1.4, "f").slice(1)] });
 const E_n = newton({ expr: [[28.5, "focus"], [31.7, "blank"], [33.0, "focus"], [36.5, "stern"]], handB: writing(28.5, 38.1) });
-const ShotE = () => (<><Garden /><GroundApple /><Doodle a={E_n} /><NewtonBook a={E_n} /><Quill a={E_n} /><Doodle a={E_me} /></>);
+const ShotE = () => (<><Garden /><Held a={E_me} side="f" off={[0, 0.03, 0]}><Apple p={[0, 0, 0]} s={1.3} /></Held><Doodle a={E_n} /><NewtonBook a={E_n} /><Quill a={E_n} /><Doodle a={E_me} /></>);
 
-// F. Машешь, кричишь — он не слышит. В итоге ловишь яблоко и уходишь
+// F. Машешь (с яблоком в руке), кричишь — он не слышит. Подбрасываешь-ловишь яблоко и уходишь
 const F_me = me({ pos: [0.35, 0, -0.6],
   expr: [[38.0, "grin"], [38.8, "nervous"], [39.4, "shout"], [40.8, "stern"], [42.0, "blank"], [43.1, "smug"], [44.4, "shock"], [45.0, "laugh"], [45.9, "proud"]],
   handF: [[38.0, ...REST_F], [38.25, -0.36, 1.08], [38.45, -0.26, 1.2], [38.65, -0.36, 1.08], [38.85, -0.26, 1.2], [39.05, -0.36, 1.08], [39.3, ...REST_F],
@@ -127,11 +134,10 @@ const F_n = newton({ expr: [[38.0, "focus"], [39.6, "blank"], [40.4, "focus"], [
   handB: [...writing(38.0, 41.5), [41.7, 0.36, 0.86], [41.9, 0.31, 0.92], [42.1, 0.36, 0.86], [42.3, 0.31, 0.92], ...writing(42.6, 47.2)] });
 const CatchApple: React.FC = () => {
   const sec = useSec();
-  if (sec < 44.3) return null;
-  const u = Math.min(1, (sec - 44.3) / 0.7);
-  return <Held a={F_me} side="f" off={[0, 0.03 + (1 - u * u) * 1.6, 0]}><Apple p={[0, 0, 0]} s={1.3} /></Held>;
+  const u = Math.max(0, Math.min(1, (sec - 44.5) / 0.75));
+  return <Held a={F_me} side="f" off={[0, 0.03 + Math.sin(u * Math.PI) * 0.75, 0]}><Apple p={[0, 0, 0]} s={1.3} /></Held>;
 };
-const ShotF = () => (<><Garden /><GroundApple /><CatchApple /><Doodle a={F_n} /><NewtonBook a={F_n} /><Quill a={F_n} /><Doodle a={F_me} /></>);
+const ShotF = () => (<><Garden /><CatchApple /><Doodle a={F_n} /><NewtonBook a={F_n} /><Quill a={F_n} /><Doodle a={F_me} /></>);
 
 // G. «И вот теперь представь…» — откусываешь яблоко, вспышка
 const G_me = me({ pos: [0.9, 0, -0.35], expr: [[47.06, "smug"], [47.7, "grin"], [48.3, "laugh"]],
@@ -197,7 +203,7 @@ const SHOTS: Shot[] = [
   { t0: 0, t1: 4.43, el: <Scene3D t0={0} {...O3} cam={[C(0, [3.4, 2.4, 4.8], [0, 1.3, -1.6], 52), C(4.43, [2.5, 1.55, 3.4], [0.1, 1.05, -1.2], 50)]} focus={[0.6, 0.8, -0.6]}><ShotA /></Scene3D> },
   { t0: 4.43, t1: 12.29, el: <Scene3D t0={4.43} {...O3} cam={[C(4.43, [2.4, 1.35, 2.6], [0.6, 1.0, -0.6], 48), C(9.4, [1.7, 1.3, 2.4], [0.2, 1.0, -0.8], 48), C(12.29, [0.8, 1.15, 1.8], [-0.55, 0.95, -1.0], 46)]} focus={[0.6, 0.8, -0.6]}><ShotB /></Scene3D> },
   { t0: 12.29, t1: 21.19, el: <Scene3D t0={12.29} {...O3} cam={[C(12.29, [0.8, 1.15, 1.8], [-0.55, 0.95, -1.0], 46), C(17.3, [0.6, 1.12, 1.6], [-0.55, 0.95, -1.0], 46), C(21.19, [-0.3, 0.92, 0.45], [-0.75, 0.75, -1.05], 44)]} focus={[-0.75, 0.75, -1.0]}><ShotC /></Scene3D> },
-  { t0: 21.19, t1: 28.5, el: <Scene3D t0={21.19} {...O3} cam={[C(21.19, [3.2, 1.7, 3.9], [-0.6, 1.2, -1.3], 50), C(25.0, [1.6, 1.35, 2.5], [-0.3, 0.9, -0.9], 48), C(28.5, [0.9, 1.25, 2.2], [-0.2, 0.8, -0.9], 48)]} focus={[0.1, 0.6, -0.8]}><ShotD /></Scene3D> },
+  { t0: 21.19, t1: 28.5, el: <Scene3D t0={21.19} {...O3} cam={[C(21.19, [3.2, 1.7, 3.9], [-0.6, 1.2, -1.3], 50), C(25.0, [1.6, 1.35, 2.5], [-0.3, 0.9, -0.9], 48), C(28.5, [1.0, 1.3, 2.4], [-0.1, 1.0, -0.9], 50)]} focus={[0.1, 0.6, -0.8]}><ShotD /></Scene3D> },
   { t0: 28.5, t1: 38.0, el: <Scene3D t0={28.5} {...O3} cam={[C(28.5, [1.15, 1.15, 1.55], [0.5, 0.95, -0.55], 44), C(33.6, [1.0, 1.15, 1.6], [0.35, 0.92, -0.6], 44), C(38.0, [0.75, 1.1, 1.9], [-0.25, 0.75, -0.85], 48)]} focus={[0.5, 0.8, -0.55]}><ShotE /></Scene3D> },
   { t0: 38.0, t1: 47.06, el: <Scene3D t0={38.0} {...O3} cam={[C(38.0, [1.1, 1.2, 2.3], [-0.25, 0.85, -0.85], 48), C(44.0, [0.85, 1.2, 2.1], [-0.15, 0.9, -0.8], 48), C(47.06, [1.5, 1.25, 2.5], [0.7, 0.9, -0.6], 50)]} focus={[-0.2, 0.8, -0.8]}><ShotF /></Scene3D> },
   { t0: 47.06, t1: 49.38, el: <Scene3D t0={47.06} {...O3} cam={[C(47.06, [1.35, 1.15, 1.6], [0.85, 1.0, -0.35], 44), C(49.38, [1.25, 1.12, 1.35], [0.85, 1.0, -0.35], 44)]} focus={[0.9, 0.9, -0.35]}><ShotG /></Scene3D> },
@@ -217,8 +223,8 @@ const SHOTS: Shot[] = [
 const Flash: React.FC = () => {
   const f = useCurrentFrame();
   const o = Math.max(
-    interpolate(f, [1.4 * FPS, 1.72 * FPS, 2.3 * FPS], [0, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
-    interpolate(f, [48.9 * FPS, 49.38 * FPS, 50.1 * FPS], [0, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+    interpolate(f, [WARP(1.4) * FPS, WARP(1.72) * FPS, WARP(2.3) * FPS], [0, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+    interpolate(f, [WARP(48.9) * FPS, WARP(49.38) * FPS, WARP(50.1) * FPS], [0, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
   return o > 0 ? <AbsoluteFill style={{ backgroundColor: "#ffffff", opacity: o }} /> : null;
 };
 
@@ -239,13 +245,13 @@ const Caption: React.FC = () => {
   );
 };
 
-export const TOTAL = Math.round(SHOTS[SHOTS.length - 1].t1 * FPS);
+export const TOTAL = Math.round(WARP(SHOTS[SHOTS.length - 1].t1) * FPS);
 export const Video: React.FC = () => {
   const { durationInFrames } = useVideoConfig();
   return (
     <AbsoluteFill style={{ backgroundColor: "black" }}>
       {SHOTS.map((s, i) => (
-        <Sequence key={i} from={Math.round(s.t0 * FPS)} durationInFrames={Math.round(s.t1 * FPS) - Math.round(s.t0 * FPS)}>{s.el}</Sequence>
+        <Sequence key={i} from={Math.round(WARP(s.t0) * FPS)} durationInFrames={Math.round(WARP(s.t1) * FPS) - Math.round(WARP(s.t0) * FPS)}>{s.el}</Sequence>
       ))}
       <Flash />
       <Audio src={staticFile(plan.voice)} />

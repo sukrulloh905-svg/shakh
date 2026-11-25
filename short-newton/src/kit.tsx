@@ -20,7 +20,16 @@ export type V3 = [number, number, number];
 // ------------------------------------------------------------------ время шота
 // Каждый шот получает t0 — секунду голоса, с которой он начинается. sec() = текущая секунда ГОЛОСА.
 const ShotCtx = createContext<{ t0: number; cam: THREE.Vector3 }>({ t0: 0, cam: new THREE.Vector3() });
-export const useSec = () => { const f = useCurrentFrame(); const { t0 } = useContext(ShotCtx); return t0 + f / FPS; };
+// Сцены написаны во «временах сценария» (старый голос); WARP переводит их во время нового голоса и обратно.
+import W from "./warp.json";
+const pw = (x: number, a: number[], b: number[]) => {
+  if (x <= a[0]) return b[0] + (x - a[0]);
+  for (let i = 1; i < a.length; i++) if (x <= a[i]) return b[i - 1] + ((x - a[i - 1]) / (a[i] - a[i - 1])) * (b[i] - b[i - 1]);
+  return b[b.length - 1] + (x - a[a.length - 1]);
+};
+export const WARP = (x: number) => pw(x, W.old, W.new);
+export const UNWARP = (x: number) => pw(x, W.new, W.old);
+export const useSec = () => { const f = useCurrentFrame(); const { t0 } = useContext(ShotCtx); return UNWARP(WARP(t0) + f / FPS); };
 
 // ------------------------------------------------------------------ обводка рёбер (как Line Art)
 let lineMat: LineMaterial | null = null;
@@ -349,7 +358,7 @@ export const Scene3D: React.FC<{ t0: number; cam: CamKey[]; focus: V3; light?: L
   ({ t0, cam, focus, light = "day", bg = "#9fbfe0", windowX = -3, blur = 5, children }) => {
     const frame = useCurrentFrame();
     const { width, height } = useVideoConfig();
-    const t = t0 + frame / FPS;
+    const t = UNWARP(WARP(t0) + frame / FPS);
     const [, p, l, fov] = camAt(t, cam);
     const pos = new THREE.Vector3(...p);
     pos.x += Math.sin(frame / 23) * 0.012; pos.y += Math.sin(frame / 17) * 0.008;   // «ручная» камера
