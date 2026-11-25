@@ -2,6 +2,9 @@
 import React from "react";
 import * as THREE from "three";
 import { Box, Ball, Apple, Sign, Room, Desk, Shelf, Plant, Lamp, Clock, Bench, Door, useSec, bonkAt, at, V3 } from "./kit";
+import { getInputProps as _gip } from "remotion";
+const EN = (_gip() as { lang?: string }).lang === "en";
+export const tr = (ru: string, en: string) => (EN ? en : ru);
 
 // ------------------------------------------------------------------ общие мелочи
 export const Cloud: React.FC<{ p: V3; s?: number }> = ({ p, s = 1 }) => (
@@ -127,11 +130,11 @@ export const Garden: React.FC<{ signBonk?: number; plagueBonk?: number }> = ({ s
     {/* табличка-указатель */}
     <group position={[2.6, 0, -2.6]}>
       <Box p={[0, 0.6, 0]} s={[0.08, 1.2, 0.08]} c="#8a6239" />
-      <group position={[0, 1.25, 0.05]} scale={bonkAt(sec, signBonk)}><Box p={[0, 0, -0.02]} s={[1.1, 0.42, 0.04]} c="#8a6239" /><Sign p={[0, 0, 0.005]} w={1.0} h={0.34} text={"ВУЛСТОРП\n1666"} bg="#d9b77c" fg="#3a2414" glow={0.15} sz={60} /></group>
+      <group position={[0, 1.25, 0.05]} scale={bonkAt(sec, signBonk)}><Box p={[0, 0, -0.02]} s={[1.1, 0.42, 0.04]} c="#8a6239" /><Sign p={[0, 0, 0.005]} w={1.0} h={0.34} text={tr("ВУЛСТОРП\n1666", "WOOLSTHORPE\n1666")} bg="#d9b77c" fg="#3a2414" glow={0.15} sz={60} /></group>
     </group>
     <group position={[-3.4, 0, -2.9]}>
       <Box p={[0, 0.6, 0]} s={[0.08, 1.2, 0.08]} c="#8a6239" />
-      <group position={[0, 1.3, 0.05]} scale={bonkAt(sec, plagueBonk)}><Sign p={[0, 0, 0]} w={1.05} h={0.6} text={"КЕМБРИДЖ\nЗАКРЫТ\nЧУМА"} bg="#efe3c2" fg="#8a1f1a" glow={0.15} sz={46} /></group>
+      <group position={[0, 1.3, 0.05]} scale={bonkAt(sec, plagueBonk)}><Sign p={[0, 0, 0]} w={1.05} h={0.6} text={tr("КЕМБРИДЖ\nЗАКРЫТ\nЧУМА", "CAMBRIDGE\nCLOSED\nPLAGUE")} bg="#efe3c2" fg="#8a1f1a" glow={0.15} sz={46} /></group>
     </group>
     <Cow p={[3.4, 0, -3.6]} rotY={-0.5} />
     <Basket p={[0.05, 0, -0.95]} />
@@ -169,13 +172,13 @@ export const Street: React.FC<{ float?: number; billboard?: boolean; lift?: numb
     {Array.from({ length: 12 }, (_, i) => <Box key={"m" + i} p={[-15 + i * 2.6, 0.005, 2.0]} s={[1.2, 0.01, 0.12]} c="#f2f2ea" line={false} />)}
     <Box p={[0, 0.06, -2.2]} s={[60, 0.12, 4]} c="#c9c3b8" line={false} r={0.9} />
     <Box p={[0, 0.07, -0.18]} s={[60, 0.14, 0.12]} c="#a29b90" />
-    <group position={[0, L(0), 0]}><Building x={-6.5} w={4} h={9} c="#d88a5a" /><Sign p={[-6.5, 1.05, -3.97]} w={1.8} h={0.45} text="АПТЕКА" bg="#2f9e5a" fg="#ffffff" glow={0.4} /></group>
+    <group position={[0, L(0), 0]}><Building x={-6.5} w={4} h={9} c="#d88a5a" /><Sign p={[-6.5, 1.05, -3.97]} w={1.8} h={0.45} text={tr("АПТЕКА", "PHARMACY")} bg="#2f9e5a" fg="#ffffff" glow={0.4} /></group>
     <group position={[0, L(1), 0]}><Building x={-2.2} w={4.2} h={6.5} c="#e7c77a" /><Door p={[-2.6, 0.12, -3.97]} c="#3f7a5a" number="12" />
-      <Sign p={[-1.0, 1.35, -3.97]} w={1.5} h={0.45} text="КАФЕ" bg="#7a3b22" fg="#ffd88a" glow={0.4} /></group>
-    <group position={[0, L(2), 0]}><Building x={2.2} w={4.2} h={8} c="#8fb3c9" /><Sign p={[2.2, 1.3, -3.97]} w={2.0} h={0.45} text="ПРОДУКТЫ" bg="#d64545" fg="#ffffff" glow={0.4} />
-      {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={"ПОДПИШИСЬ\nСТАВЬ ЛАЙК"} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={58} />
+      <Sign p={[-1.0, 1.35, -3.97]} w={1.5} h={0.45} text={tr("КАФЕ", "CAFE")} bg="#7a3b22" fg="#ffd88a" glow={0.4} /></group>
+    <group position={[0, L(2), 0]}><Building x={2.2} w={4.2} h={8} c="#8fb3c9" /><Sign p={[2.2, 1.3, -3.97]} w={2.0} h={0.45} text={tr("ПРОДУКТЫ", "GROCERY")} bg="#d64545" fg="#ffffff" glow={0.4} />
+      {billboard ? <Sign p={[2.2, 5.4, -3.97]} w={3.6} h={1.3} text={tr("ПОДПИШИСЬ\nСТАВЬ ЛАЙК", "SUBSCRIBE\nHIT LIKE")} bg="#ff3b3b" fg="#ffffff" glow={0.6} sz={58} />
         : <Sign p={[2.2, 5.4, -3.97]} w={3.4} h={1.0} text={"2026"} bg="#1d2a44" fg="#7af0ff" glow={0.6} />}</group>
-    <group position={[0, L(3), 0]}><Building x={6.6} w={4.4} h={10} c="#c98ba0" /><Sign p={[6.6, 1.3, -3.97]} w={1.7} h={0.45} text="КНИГИ" bg="#2f4fa8" fg="#ffffff" glow={0.4} /></group>
+    <group position={[0, L(3), 0]}><Building x={6.6} w={4.4} h={10} c="#c98ba0" /><Sign p={[6.6, 1.3, -3.97]} w={1.7} h={0.45} text={tr("КНИГИ", "BOOKS")} bg="#2f4fa8" fg="#ffffff" glow={0.4} /></group>
     <group position={[0, L(4) * 1.5, 0]}><Building x={-4} w={4} h={14} c="#a9b6c2" z={-12} /><Building x={4} w={5} h={16} c="#b9a9c9" z={-13} /></group>
     {/* фонари */}
     {[-4.5, 0.6, 4.5].map((x) => <group key={x} position={[x, 0, -3.5]}><Box p={[0, 1.4, 0]} s={[0.08, 2.8, 0.08]} c="#3a3f46" /><Box p={[0, 2.85, 0.15]} s={[0.3, 0.1, 0.4]} c="#3a3f46" /></group>)}
@@ -207,11 +210,11 @@ export const Kitchen: React.FC<{ mess?: number; tv?: boolean; floatAmt?: number 
     {tv ? (<group position={[2.0, 1.75, -1.9]}>
       <Box p={[0, 0, 0]} s={[1.3, 0.8, 0.08]} c="#1e2126" />
       <mesh position={[0, 0, 0.045]}><planeGeometry args={[1.18, 0.68]} /><meshBasicMaterial color="#6fa8dc" toneMapped={false} /></mesh>
-      <Sign p={[0.42, -0.26, 0.05]} w={0.3} h={0.1} text="НОВОСТИ" bg="#d64545" fg="#fff" glow={0.5} sz={40} />
+      <Sign p={[0.42, -0.26, 0.05]} w={0.3} h={0.1} text={tr("НОВОСТИ", "NEWS")} bg="#d64545" fg="#fff" glow={0.5} sz={40} />
     </group>) : null}
     <Shelf p={[2.6, 0, -1.7]} w={0.6} h={1.2} />
     <Plant p={[-2.6, 0, -1.5]} h={0.7} />
-    <Sign p={[-2.1, 1.6, -1.98]} w={0.5} h={0.65} text={"ЧАЙ\nКОФЕ"} bg="#ffffff" fg="#c0392b" glow={0.1} sz={70} />
+    <Sign p={[-2.1, 1.6, -1.98]} w={0.5} h={0.65} text={tr("ЧАЙ\nКОФЕ", "TEA\nCOFFEE")} bg="#ffffff" fg="#c0392b" glow={0.1} sz={70} />
     {/* стол и бардак на нём */}
     <group position={[0.2, 0, 0.2]}>
       <Box p={[0, 0.74, 0]} s={[1.2, 0.05, 0.75]} c="#c98c55" />
@@ -268,9 +271,9 @@ export const Bookshop: React.FC<{ floatAmt?: number; tagBonk?: number }> = ({ fl
     <Shelf p={[-1.9, 0, -1.75]} w={1.1} h={2.0} />
     <Shelf p={[1.9, 0, -1.75]} w={1.1} h={2.0} />
     <Shelf p={[0, 0, -1.75]} w={1.3} h={2.0} empty={[1, 2]} />
-    <Sign p={[0, 2.55, -1.98]} w={1.8} h={0.4} text="ФИЗИКА" bg="#2f4fa8" fg="#ffffff" glow={0.3} />
-    <group position={[0, 1.05, -1.55]} scale={bonkAt(sec, tagBonk)}><Sign p={[0, 0, 0]} w={0.9} h={0.42} text={"«НАЧАЛА»\nНЕТ"} bg="#fff6c9" fg="#c0392b" glow={0.3} sz={56} /></group>
-    <Sign p={[-2.3, 2.5, -1.98]} w={1.0} h={0.35} text="КНИГИ" bg="#d64545" fg="#fff" glow={0.3} />
+    <Sign p={[0, 2.55, -1.98]} w={1.8} h={0.4} text={tr("ФИЗИКА", "PHYSICS")} bg="#2f4fa8" fg="#ffffff" glow={0.3} />
+    <group position={[0, 1.05, -1.55]} scale={bonkAt(sec, tagBonk)}><Sign p={[0, 0, 0]} w={0.9} h={0.42} text={tr("«НАЧАЛА»\nНЕТ", "NO\n«PRINCIPIA»")} bg="#fff6c9" fg="#c0392b" glow={0.3} sz={56} /></group>
+    <Sign p={[-2.3, 2.5, -1.98]} w={1.0} h={0.35} text={tr("КНИГИ", "BOOKS")} bg="#d64545" fg="#fff" glow={0.3} />
     <Plant p={[2.7, 0, -1.4]} h={0.8} />
     {/* стол с кассой и стопками */}
     <group position={[1.6, 0, 0.1]}>

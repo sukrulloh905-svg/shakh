@@ -1,9 +1,12 @@
 // РОЛИК «Что, если я попал во времена Ньютона?» — 16:9, ~1:39. Всё время — в секундах ГОЛОСА.
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, delayRender, continueRender } from "remotion";
-import plan from "./plan.json";
+import planRu from "./plan.json";
+import planEn from "./plan_en.json";
+import { getInputProps } from "remotion";
+const plan = (getInputProps() as { lang?: string }).lang === "en" ? planEn : planRu;
 import { FPS, Scene3D, Box, Ball, Apple, Sign, Doodle, Held, Actor, Key, pointKeys, bonkAt, useSec, at, V3, REST_F, REST_B, CamKey, WARP } from "./kit";
-import { Garden, Street, Kitchen, Study, Bookshop, Cat, Bird, Fridge, Briefcase, Book } from "./places";
+import { tr, Garden, Street, Kitchen, Study, Bookshop, Cat, Bird, Fridge, Briefcase, Book } from "./places";
 import type { Look } from "./doodle";
 
 // Шрифт субтитров — локальный файл (Google Fonts в этом окружении недоступен из браузера рендера)
@@ -100,7 +103,7 @@ const C_me = me({ pos: [0.2, 0, -0.85], expr: [[12.29, "blank"], [14.2, "realize
 const ShotC = () => (<>
   <Garden /><Doodle a={C_n} /><NewtonBook a={C_n} /><Quill a={C_n} /><Doodle a={C_me} />
   <Formula t={14.2} p={[-1.15, 1.2, -1.0]} text="F = G·m₁m₂/r²" />
-  <Formula t={15.1} p={[-0.3, 1.22, -1.0]} text="g = 9,8 м/с²" />
+  <Formula t={15.1} p={[-0.3, 1.22, -1.0]} text={tr("g = 9,8 м/с²", "g = 9.8 m/s²")} />
 </>);
 
 // D. Сидит под деревом, думает о жизни… и вдруг падает яблоко — ты ловишь его на лету!

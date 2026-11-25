@@ -1,0 +1,1646 @@
+{
+ "fps": 30,
+ "total": 2349,
+ "video": "video.mp4",
+ "voice": "voice_en.mp3",
+ "music": "music.wav",
+ "mix": {
+  "voice": 1,
+  "music": 0.11
+ },
+ "caption": {
+  "size": 92,
+  "stroke": 16,
+  "bottom": 600,
+  "highlight": null
+ },
+ "groups": [
+  {
+   "text": "What if I",
+   "start": 0,
+   "end": 14,
+   "words": [
+    {
+     "text": "What",
+     "start": 0,
+     "end": 5
+    },
+    {
+     "text": "if",
+     "start": 5,
+     "end": 9
+    },
+    {
+     "text": "I",
+     "start": 9,
+     "end": 14
+    }
+   ]
+  },
+  {
+   "text": "traveled back to",
+   "start": 14,
+   "end": 32,
+   "words": [
+    {
+     "text": "traveled",
+     "start": 14,
+     "end": 23
+    },
+    {
+     "text": "back",
+     "start": 23,
+     "end": 28
+    },
+    {
+     "text": "to",
+     "start": 28,
+     "end": 32
+    }
+   ]
+  },
+  {
+   "text": "the time of",
+   "start": 32,
+   "end": 49,
+   "words": [
+    {
+     "text": "the",
+     "start": 32,
+     "end": 37
+    },
+    {
+     "text": "time",
+     "start": 37,
+     "end": 44
+    },
+    {
+     "text": "of",
+     "start": 44,
+     "end": 49
+    }
+   ]
+  },
+  {
+   "text": "Isaac Newton?",
+   "start": 49,
+   "end": 106,
+   "words": [
+    {
+     "text": "Isaac",
+     "start": 49,
+     "end": 59
+    },
+    {
+     "text": "Newton?",
+     "start": 59,
+     "end": 106
+    }
+   ]
+  },
+  {
+   "text": "Imagine you somehow",
+   "start": 106,
+   "end": 142,
+   "words": [
+    {
+     "text": "Imagine",
+     "start": 106,
+     "end": 120
+    },
+    {
+     "text": "you",
+     "start": 120,
+     "end": 131
+    },
+    {
+     "text": "somehow",
+     "start": 131,
+     "end": 142
+    }
+   ]
+  },
+  {
+   "text": "ended up in",
+   "start": 142,
+   "end": 159,
+   "words": [
+    {
+     "text": "ended",
+     "start": 142,
+     "end": 150
+    },
+    {
+     "text": "up",
+     "start": 150,
+     "end": 155
+    },
+    {
+     "text": "in",
+     "start": 155,
+     "end": 159
+    }
+   ]
+  },
+  {
+   "text": "the past,",
+   "start": 159,
+   "end": 173,
+   "words": [
+    {
+     "text": "the",
+     "start": 159,
+     "end": 164
+    },
+    {
+     "text": "past,",
+     "start": 164,
+     "end": 173
+    }
+   ]
+  },
+  {
+   "text": "in the time",
+   "start": 173,
+   "end": 191,
+   "words": [
+    {
+     "text": "in",
+     "start": 173,
+     "end": 178
+    },
+    {
+     "text": "the",
+     "start": 178,
+     "end": 183
+    },
+    {
+     "text": "time",
+     "start": 183,
+     "end": 191
+    }
+   ]
+  },
+  {
+   "text": "of the great",
+   "start": 191,
+   "end": 208,
+   "words": [
+    {
+     "text": "of",
+     "start": 191,
+     "end": 195
+    },
+    {
+     "text": "the",
+     "start": 195,
+     "end": 200
+    },
+    {
+     "text": "great",
+     "start": 200,
+     "end": 208
+    }
+   ]
+  },
+  {
+   "text": "scientist Isaac",
+   "start": 208,
+   "end": 230,
+   "words": [
+    {
+     "text": "scientist",
+     "start": 208,
+     "end": 219
+    },
+    {
+     "text": "Isaac",
+     "start": 219,
+     "end": 230
+    }
+   ]
+  },
+  {
+   "text": "Newton.",
+   "start": 230,
+   "end": 278,
+   "words": [
+    {
+     "text": "Newton.",
+     "start": 230,
+     "end": 278
+    }
+   ]
+  },
+  {
+   "text": "This is the",
+   "start": 278,
+   "end": 295,
+   "words": [
+    {
+     "text": "This",
+     "start": 278,
+     "end": 284
+    },
+    {
+     "text": "is",
+     "start": 284,
+     "end": 290
+    },
+    {
+     "text": "the",
+     "start": 290,
+     "end": 295
+    }
+   ]
+  },
+  {
+   "text": "man who discovered",
+   "start": 295,
+   "end": 323,
+   "words": [
+    {
+     "text": "man",
+     "start": 295,
+     "end": 301
+    },
+    {
+     "text": "who",
+     "start": 301,
+     "end": 307
+    },
+    {
+     "text": "discovered",
+     "start": 307,
+     "end": 323
+    }
+   ]
+  },
+  {
+   "text": "the law of",
+   "start": 323,
+   "end": 340,
+   "words": [
+    {
+     "text": "the",
+     "start": 323,
+     "end": 329
+    },
+    {
+     "text": "law",
+     "start": 329,
+     "end": 334
+    },
+    {
+     "text": "of",
+     "start": 334,
+     "end": 340
+    }
+   ]
+  },
+  {
+   "text": "universal gravitation.",
+   "start": 340,
+   "end": 386,
+   "words": [
+    {
+     "text": "universal",
+     "start": 340,
+     "end": 356
+    },
+    {
+     "text": "gravitation.",
+     "start": 356,
+     "end": 386
+    }
+   ]
+  },
+  {
+   "text": "But one day,",
+   "start": 386,
+   "end": 414,
+   "words": [
+    {
+     "text": "But",
+     "start": 386,
+     "end": 391
+    },
+    {
+     "text": "one",
+     "start": 391,
+     "end": 401
+    },
+    {
+     "text": "day,",
+     "start": 401,
+     "end": 414
+    }
+   ]
+  },
+  {
+   "text": "a historic moment",
+   "start": 414,
+   "end": 442,
+   "words": [
+    {
+     "text": "a",
+     "start": 414,
+     "end": 420
+    },
+    {
+     "text": "historic",
+     "start": 420,
+     "end": 433
+    },
+    {
+     "text": "moment",
+     "start": 433,
+     "end": 442
+    }
+   ]
+  },
+  {
+   "text": "happens…",
+   "start": 442,
+   "end": 513,
+   "words": [
+    {
+     "text": "happens…",
+     "start": 442,
+     "end": 513
+    }
+   ]
+  },
+  {
+   "text": "Newton is sitting",
+   "start": 513,
+   "end": 537,
+   "words": [
+    {
+     "text": "Newton",
+     "start": 513,
+     "end": 522
+    },
+    {
+     "text": "is",
+     "start": 522,
+     "end": 527
+    },
+    {
+     "text": "sitting",
+     "start": 527,
+     "end": 537
+    }
+   ]
+  },
+  {
+   "text": "under a tree,",
+   "start": 537,
+   "end": 565,
+   "words": [
+    {
+     "text": "under",
+     "start": 537,
+     "end": 546
+    },
+    {
+     "text": "a",
+     "start": 546,
+     "end": 551
+    },
+    {
+     "text": "tree,",
+     "start": 551,
+     "end": 565
+    }
+   ]
+  },
+  {
+   "text": "thinking about life,",
+   "start": 565,
+   "end": 601,
+   "words": [
+    {
+     "text": "thinking",
+     "start": 565,
+     "end": 575
+    },
+    {
+     "text": "about",
+     "start": 575,
+     "end": 587
+    },
+    {
+     "text": "life,",
+     "start": 587,
+     "end": 601
+    }
+   ]
+  },
+  {
+   "text": "and suddenly an",
+   "start": 601,
+   "end": 625,
+   "words": [
+    {
+     "text": "and",
+     "start": 601,
+     "end": 606
+    },
+    {
+     "text": "suddenly",
+     "start": 606,
+     "end": 619
+    },
+    {
+     "text": "an",
+     "start": 619,
+     "end": 625
+    }
+   ]
+  },
+  {
+   "text": "apple falls right",
+   "start": 625,
+   "end": 645,
+   "words": [
+    {
+     "text": "apple",
+     "start": 625,
+     "end": 634
+    },
+    {
+     "text": "falls",
+     "start": 634,
+     "end": 640
+    },
+    {
+     "text": "right",
+     "start": 640,
+     "end": 645
+    }
+   ]
+  },
+  {
+   "text": "next to him!",
+   "start": 645,
+   "end": 674,
+   "words": [
+    {
+     "text": "next",
+     "start": 645,
+     "end": 651
+    },
+    {
+     "text": "to",
+     "start": 651,
+     "end": 656
+    },
+    {
+     "text": "him!",
+     "start": 656,
+     "end": 674
+    }
+   ]
+  },
+  {
+   "text": "And you're standing",
+   "start": 674,
+   "end": 703,
+   "words": [
+    {
+     "text": "And",
+     "start": 674,
+     "end": 679
+    },
+    {
+     "text": "you're",
+     "start": 679,
+     "end": 694
+    },
+    {
+     "text": "standing",
+     "start": 694,
+     "end": 703
+    }
+   ]
+  },
+  {
+   "text": "right there,",
+   "start": 703,
+   "end": 721,
+   "words": [
+    {
+     "text": "right",
+     "start": 703,
+     "end": 708
+    },
+    {
+     "text": "there,",
+     "start": 708,
+     "end": 721
+    }
+   ]
+  },
+  {
+   "text": "knowing full well",
+   "start": 721,
+   "end": 740,
+   "words": [
+    {
+     "text": "knowing",
+     "start": 721,
+     "end": 730
+    },
+    {
+     "text": "full",
+     "start": 730,
+     "end": 735
+    },
+    {
+     "text": "well",
+     "start": 735,
+     "end": 740
+    }
+   ]
+  },
+  {
+   "text": "that one of",
+   "start": 740,
+   "end": 759,
+   "words": [
+    {
+     "text": "that",
+     "start": 740,
+     "end": 746
+    },
+    {
+     "text": "one",
+     "start": 746,
+     "end": 754
+    },
+    {
+     "text": "of",
+     "start": 754,
+     "end": 759
+    }
+   ]
+  },
+  {
+   "text": "the most important",
+   "start": 759,
+   "end": 782,
+   "words": [
+    {
+     "text": "the",
+     "start": 759,
+     "end": 765
+    },
+    {
+     "text": "most",
+     "start": 765,
+     "end": 770
+    },
+    {
+     "text": "important",
+     "start": 770,
+     "end": 782
+    }
+   ]
+  },
+  {
+   "text": "moments in human",
+   "start": 782,
+   "end": 804,
+   "words": [
+    {
+     "text": "moments",
+     "start": 782,
+     "end": 791
+    },
+    {
+     "text": "in",
+     "start": 791,
+     "end": 796
+    },
+    {
+     "text": "human",
+     "start": 796,
+     "end": 804
+    }
+   ]
+  },
+  {
+   "text": "history is about",
+   "start": 804,
+   "end": 834,
+   "words": [
+    {
+     "text": "history",
+     "start": 804,
+     "end": 816
+    },
+    {
+     "text": "is",
+     "start": 816,
+     "end": 822
+    },
+    {
+     "text": "about",
+     "start": 822,
+     "end": 834
+    }
+   ]
+  },
+  {
+   "text": "to happen.",
+   "start": 834,
+   "end": 888,
+   "words": [
+    {
+     "text": "to",
+     "start": 834,
+     "end": 839
+    },
+    {
+     "text": "happen.",
+     "start": 839,
+     "end": 888
+    }
+   ]
+  },
+  {
+   "text": "You try to",
+   "start": 888,
+   "end": 909,
+   "words": [
+    {
+     "text": "You",
+     "start": 888,
+     "end": 899
+    },
+    {
+     "text": "try",
+     "start": 899,
+     "end": 904
+    },
+    {
+     "text": "to",
+     "start": 904,
+     "end": 909
+    }
+   ]
+  },
+  {
+   "text": "get his attention,",
+   "start": 909,
+   "end": 936,
+   "words": [
+    {
+     "text": "get",
+     "start": 909,
+     "end": 914
+    },
+    {
+     "text": "his",
+     "start": 914,
+     "end": 919
+    },
+    {
+     "text": "attention,",
+     "start": 919,
+     "end": 936
+    }
+   ]
+  },
+  {
+   "text": "but he can't",
+   "start": 936,
+   "end": 951,
+   "words": [
+    {
+     "text": "but",
+     "start": 936,
+     "end": 941
+    },
+    {
+     "text": "he",
+     "start": 941,
+     "end": 946
+    },
+    {
+     "text": "can't",
+     "start": 946,
+     "end": 951
+    }
+   ]
+  },
+  {
+   "text": "hear you.",
+   "start": 951,
+   "end": 977,
+   "words": [
+    {
+     "text": "hear",
+     "start": 951,
+     "end": 959
+    },
+    {
+     "text": "you.",
+     "start": 959,
+     "end": 977
+    }
+   ]
+  },
+  {
+   "text": "In the end,",
+   "start": 977,
+   "end": 996,
+   "words": [
+    {
+     "text": "In",
+     "start": 977,
+     "end": 982
+    },
+    {
+     "text": "the",
+     "start": 982,
+     "end": 987
+    },
+    {
+     "text": "end,",
+     "start": 987,
+     "end": 996
+    }
+   ]
+  },
+  {
+   "text": "you just catch",
+   "start": 996,
+   "end": 1016,
+   "words": [
+    {
+     "text": "you",
+     "start": 996,
+     "end": 1007
+    },
+    {
+     "text": "just",
+     "start": 1007,
+     "end": 1012
+    },
+    {
+     "text": "catch",
+     "start": 1012,
+     "end": 1016
+    }
+   ]
+  },
+  {
+   "text": "the apple and",
+   "start": 1016,
+   "end": 1034,
+   "words": [
+    {
+     "text": "the",
+     "start": 1016,
+     "end": 1021
+    },
+    {
+     "text": "apple",
+     "start": 1021,
+     "end": 1029
+    },
+    {
+     "text": "and",
+     "start": 1029,
+     "end": 1034
+    }
+   ]
+  },
+  {
+   "text": "walk away!",
+   "start": 1034,
+   "end": 1109,
+   "words": [
+    {
+     "text": "walk",
+     "start": 1034,
+     "end": 1039
+    },
+    {
+     "text": "away!",
+     "start": 1039,
+     "end": 1117
+    }
+   ]
+  },
+  {
+   "text": "And now imagine…",
+   "start": 1117,
+   "end": 1172,
+   "words": [
+    {
+     "text": "And",
+     "start": 1117,
+     "end": 1122
+    },
+    {
+     "text": "now",
+     "start": 1122,
+     "end": 1127
+    },
+    {
+     "text": "imagine…",
+     "start": 1127,
+     "end": 1172
+    }
+   ]
+  },
+  {
+   "text": "You return to",
+   "start": 1172,
+   "end": 1194,
+   "words": [
+    {
+     "text": "You",
+     "start": 1172,
+     "end": 1182
+    },
+    {
+     "text": "return",
+     "start": 1182,
+     "end": 1190
+    },
+    {
+     "text": "to",
+     "start": 1190,
+     "end": 1194
+    }
+   ]
+  },
+  {
+   "text": "2026,",
+   "start": 1194,
+   "end": 1224,
+   "words": [
+    {
+     "text": "2026,",
+     "start": 1194,
+     "end": 1224
+    }
+   ]
+  },
+  {
+   "text": "but you realize",
+   "start": 1224,
+   "end": 1251,
+   "words": [
+    {
+     "text": "but",
+     "start": 1224,
+     "end": 1228
+    },
+    {
+     "text": "you",
+     "start": 1228,
+     "end": 1238
+    },
+    {
+     "text": "realize",
+     "start": 1238,
+     "end": 1251
+    }
+   ]
+  },
+  {
+   "text": "something went wrong!",
+   "start": 1251,
+   "end": 1326,
+   "words": [
+    {
+     "text": "something",
+     "start": 1251,
+     "end": 1261
+    },
+    {
+     "text": "went",
+     "start": 1261,
+     "end": 1265
+    },
+    {
+     "text": "wrong!",
+     "start": 1265,
+     "end": 1346
+    }
+   ]
+  },
+  {
+   "text": "People don't walk",
+   "start": 1346,
+   "end": 1370,
+   "words": [
+    {
+     "text": "People",
+     "start": 1346,
+     "end": 1359
+    },
+    {
+     "text": "don't",
+     "start": 1359,
+     "end": 1364
+    },
+    {
+     "text": "walk",
+     "start": 1364,
+     "end": 1370
+    }
+   ]
+  },
+  {
+   "text": "on the ground",
+   "start": 1370,
+   "end": 1389,
+   "words": [
+    {
+     "text": "on",
+     "start": 1370,
+     "end": 1375
+    },
+    {
+     "text": "the",
+     "start": 1375,
+     "end": 1381
+    },
+    {
+     "text": "ground",
+     "start": 1381,
+     "end": 1389
+    }
+   ]
+  },
+  {
+   "text": "anymore they fly!",
+   "start": 1389,
+   "end": 1428,
+   "words": [
+    {
+     "text": "anymore",
+     "start": 1389,
+     "end": 1405
+    },
+    {
+     "text": "they",
+     "start": 1405,
+     "end": 1414
+    },
+    {
+     "text": "fly!",
+     "start": 1414,
+     "end": 1428
+    }
+   ]
+  },
+  {
+   "text": "Cars float in",
+   "start": 1428,
+   "end": 1448,
+   "words": [
+    {
+     "text": "Cars",
+     "start": 1428,
+     "end": 1434
+    },
+    {
+     "text": "float",
+     "start": 1434,
+     "end": 1442
+    },
+    {
+     "text": "in",
+     "start": 1442,
+     "end": 1448
+    }
+   ]
+  },
+  {
+   "text": "the air!",
+   "start": 1448,
+   "end": 1523,
+   "words": [
+    {
+     "text": "the",
+     "start": 1448,
+     "end": 1453
+    },
+    {
+     "text": "air!",
+     "start": 1453,
+     "end": 1527
+    }
+   ]
+  },
+  {
+   "text": "Houses lift off",
+   "start": 1527,
+   "end": 1553,
+   "words": [
+    {
+     "text": "Houses",
+     "start": 1527,
+     "end": 1541
+    },
+    {
+     "text": "lift",
+     "start": 1541,
+     "end": 1547
+    },
+    {
+     "text": "off",
+     "start": 1547,
+     "end": 1553
+    }
+   ]
+  },
+  {
+   "text": "the ground,",
+   "start": 1553,
+   "end": 1573,
+   "words": [
+    {
+     "text": "the",
+     "start": 1553,
+     "end": 1559
+    },
+    {
+     "text": "ground,",
+     "start": 1559,
+     "end": 1573
+    }
+   ]
+  },
+  {
+   "text": "and people can",
+   "start": 1573,
+   "end": 1599,
+   "words": [
+    {
+     "text": "and",
+     "start": 1573,
+     "end": 1579
+    },
+    {
+     "text": "people",
+     "start": 1579,
+     "end": 1593
+    },
+    {
+     "text": "can",
+     "start": 1593,
+     "end": 1599
+    }
+   ]
+  },
+  {
+   "text": "lift huge objects",
+   "start": 1599,
+   "end": 1624,
+   "words": [
+    {
+     "text": "lift",
+     "start": 1599,
+     "end": 1605
+    },
+    {
+     "text": "huge",
+     "start": 1605,
+     "end": 1615
+    },
+    {
+     "text": "objects",
+     "start": 1615,
+     "end": 1624
+    }
+   ]
+  },
+  {
+   "text": "with one hand!",
+   "start": 1624,
+   "end": 1686,
+   "words": [
+    {
+     "text": "with",
+     "start": 1624,
+     "end": 1630
+    },
+    {
+     "text": "one",
+     "start": 1630,
+     "end": 1640
+    },
+    {
+     "text": "hand!",
+     "start": 1640,
+     "end": 1686
+    }
+   ]
+  },
+  {
+   "text": "Why?",
+   "start": 1686,
+   "end": 1701,
+   "words": [
+    {
+     "text": "Why?",
+     "start": 1686,
+     "end": 1701
+    }
+   ]
+  },
+  {
+   "text": "Because without",
+   "start": 1701,
+   "end": 1729,
+   "words": [
+    {
+     "text": "Because",
+     "start": 1701,
+     "end": 1716
+    },
+    {
+     "text": "without",
+     "start": 1716,
+     "end": 1729
+    }
+   ]
+  },
+  {
+   "text": "the discovery of",
+   "start": 1729,
+   "end": 1755,
+   "words": [
+    {
+     "text": "the",
+     "start": 1729,
+     "end": 1734
+    },
+    {
+     "text": "discovery",
+     "start": 1734,
+     "end": 1750
+    },
+    {
+     "text": "of",
+     "start": 1750,
+     "end": 1755
+    }
+   ]
+  },
+  {
+   "text": "the law of",
+   "start": 1755,
+   "end": 1772,
+   "words": [
+    {
+     "text": "the",
+     "start": 1755,
+     "end": 1761
+    },
+    {
+     "text": "law",
+     "start": 1761,
+     "end": 1766
+    },
+    {
+     "text": "of",
+     "start": 1766,
+     "end": 1772
+    }
+   ]
+  },
+  {
+   "text": "universal gravitation,",
+   "start": 1772,
+   "end": 1811,
+   "words": [
+    {
+     "text": "universal",
+     "start": 1772,
+     "end": 1787
+    },
+    {
+     "text": "gravitation,",
+     "start": 1787,
+     "end": 1811
+    }
+   ]
+  },
+  {
+   "text": "the history of",
+   "start": 1811,
+   "end": 1834,
+   "words": [
+    {
+     "text": "the",
+     "start": 1811,
+     "end": 1817
+    },
+    {
+     "text": "history",
+     "start": 1817,
+     "end": 1829
+    },
+    {
+     "text": "of",
+     "start": 1829,
+     "end": 1834
+    }
+   ]
+  },
+  {
+   "text": "science took a",
+   "start": 1834,
+   "end": 1861,
+   "words": [
+    {
+     "text": "science",
+     "start": 1834,
+     "end": 1847
+    },
+    {
+     "text": "took",
+     "start": 1847,
+     "end": 1856
+    },
+    {
+     "text": "a",
+     "start": 1856,
+     "end": 1861
+    }
+   ]
+  },
+  {
+   "text": "completely different",
+   "start": 1861,
+   "end": 1889,
+   "words": [
+    {
+     "text": "completely",
+     "start": 1861,
+     "end": 1877
+    },
+    {
+     "text": "different",
+     "start": 1877,
+     "end": 1889
+    }
+   ]
+  },
+  {
+   "text": "path!",
+   "start": 1889,
+   "end": 1906,
+   "words": [
+    {
+     "text": "path!",
+     "start": 1889,
+     "end": 1906
+    }
+   ]
+  },
+  {
+   "text": "And now I",
+   "start": 1906,
+   "end": 1917,
+   "words": [
+    {
+     "text": "And",
+     "start": 1906,
+     "end": 1910
+    },
+    {
+     "text": "now",
+     "start": 1910,
+     "end": 1913
+    },
+    {
+     "text": "I",
+     "start": 1913,
+     "end": 1917
+    }
+   ]
+  },
+  {
+   "text": "have just one",
+   "start": 1917,
+   "end": 1933,
+   "words": [
+    {
+     "text": "have",
+     "start": 1917,
+     "end": 1923
+    },
+    {
+     "text": "just",
+     "start": 1923,
+     "end": 1927
+    },
+    {
+     "text": "one",
+     "start": 1927,
+     "end": 1933
+    }
+   ]
+  },
+  {
+   "text": "question…",
+   "start": 1933,
+   "end": 1978,
+   "words": [
+    {
+     "text": "question…",
+     "start": 1933,
+     "end": 1978
+    }
+   ]
+  },
+  {
+   "text": "What if I",
+   "start": 1978,
+   "end": 1994,
+   "words": [
+    {
+     "text": "What",
+     "start": 1978,
+     "end": 1983
+    },
+    {
+     "text": "if",
+     "start": 1983,
+     "end": 1989
+    },
+    {
+     "text": "I",
+     "start": 1989,
+     "end": 1994
+    }
+   ]
+  },
+  {
+   "text": "accidentally changed",
+   "start": 1994,
+   "end": 2022,
+   "words": [
+    {
+     "text": "accidentally",
+     "start": 1994,
+     "end": 2013
+    },
+    {
+     "text": "changed",
+     "start": 2013,
+     "end": 2022
+    }
+   ]
+  },
+  {
+   "text": "the entire history",
+   "start": 2022,
+   "end": 2052,
+   "words": [
+    {
+     "text": "the",
+     "start": 2022,
+     "end": 2028
+    },
+    {
+     "text": "entire",
+     "start": 2028,
+     "end": 2040
+    },
+    {
+     "text": "history",
+     "start": 2040,
+     "end": 2052
+    }
+   ]
+  },
+  {
+   "text": "of humanity?!",
+   "start": 2052,
+   "end": 2106,
+   "words": [
+    {
+     "text": "of",
+     "start": 2052,
+     "end": 2058
+    },
+    {
+     "text": "humanity?!",
+     "start": 2058,
+     "end": 2106
+    }
+   ]
+  },
+  {
+   "text": "Would you give",
+   "start": 2106,
+   "end": 2129,
+   "words": [
+    {
+     "text": "Would",
+     "start": 2106,
+     "end": 2113
+    },
+    {
+     "text": "you",
+     "start": 2113,
+     "end": 2123
+    },
+    {
+     "text": "give",
+     "start": 2123,
+     "end": 2129
+    }
+   ]
+  },
+  {
+   "text": "the apple back",
+   "start": 2129,
+   "end": 2145,
+   "words": [
+    {
+     "text": "the",
+     "start": 2129,
+     "end": 2134
+    },
+    {
+     "text": "apple",
+     "start": 2134,
+     "end": 2141
+    },
+    {
+     "text": "back",
+     "start": 2141,
+     "end": 2145
+    }
+   ]
+  },
+  {
+   "text": "to Newton,",
+   "start": 2145,
+   "end": 2159,
+   "words": [
+    {
+     "text": "to",
+     "start": 2145,
+     "end": 2149
+    },
+    {
+     "text": "Newton,",
+     "start": 2149,
+     "end": 2159
+    }
+   ]
+  },
+  {
+   "text": "or leave everything",
+   "start": 2159,
+   "end": 2185,
+   "words": [
+    {
+     "text": "or",
+     "start": 2159,
+     "end": 2163
+    },
+    {
+     "text": "leave",
+     "start": 2163,
+     "end": 2173
+    },
+    {
+     "text": "everything",
+     "start": 2173,
+     "end": 2185
+    }
+   ]
+  },
+  {
+   "text": "as it is?",
+   "start": 2185,
+   "end": 2221,
+   "words": [
+    {
+     "text": "as",
+     "start": 2185,
+     "end": 2189
+    },
+    {
+     "text": "it",
+     "start": 2189,
+     "end": 2194
+    },
+    {
+     "text": "is?",
+     "start": 2194,
+     "end": 2221
+    }
+   ]
+  },
+  {
+   "text": "Subscribe and hit",
+   "start": 2221,
+   "end": 2245,
+   "words": [
+    {
+     "text": "Subscribe",
+     "start": 2221,
+     "end": 2234
+    },
+    {
+     "text": "and",
+     "start": 2234,
+     "end": 2240
+    },
+    {
+     "text": "hit",
+     "start": 2240,
+     "end": 2245
+    }
+   ]
+  },
+  {
+   "text": "like,",
+   "start": 2245,
+   "end": 2259,
+   "words": [
+    {
+     "text": "like,",
+     "start": 2245,
+     "end": 2259
+    }
+   ]
+  },
+  {
+   "text": "and stay tuned",
+   "start": 2259,
+   "end": 2284,
+   "words": [
+    {
+     "text": "and",
+     "start": 2259,
+     "end": 2265
+    },
+    {
+     "text": "stay",
+     "start": 2265,
+     "end": 2275
+    },
+    {
+     "text": "tuned",
+     "start": 2275,
+     "end": 2284
+    }
+   ]
+  },
+  {
+   "text": "for more videos",
+   "start": 2284,
+   "end": 2312,
+   "words": [
+    {
+     "text": "for",
+     "start": 2284,
+     "end": 2290
+    },
+    {
+     "text": "more",
+     "start": 2290,
+     "end": 2300
+    },
+    {
+     "text": "videos",
+     "start": 2300,
+     "end": 2312
+    }
+   ]
+  },
+  {
+   "text": "like this!",
+   "start": 2312,
+   "end": 2340,
+   "words": [
+    {
+     "text": "like",
+     "start": 2312,
+     "end": 2322
+    },
+    {
+     "text": "this!",
+     "start": 2322,
+     "end": 2340
+    }
+   ]
+  }
+ ]
+}
