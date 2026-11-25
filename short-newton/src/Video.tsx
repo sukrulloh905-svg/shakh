@@ -117,7 +117,7 @@ const ShotD = () => (<><Garden /><DApple /><Doodle a={D_n} /><NewtonBook a={D_n}
 
 // E. Ты понимаешь: сейчас случится важнейший момент — а Ньютон не замечает
 const E_me = me({ pos: [0.6, 0, -0.55], expr: [[28.5, "shock"], [29.4, "realize"], [30.7, "grin"], [32.4, "proud"], [34.3, "laugh"], [35.7, "proud"], [36.9, "nervous"]],
-  handF: [...pointKeys(30.1, -0.8, -0.5, 1.4, "f"), ...pointKeys(35.0, -0.9, 0.2, 1.4, "f").slice(1)] });
+  handF: [[28.5, -0.26, 0.72], [29.9, -0.26, 0.72], [30.4, -0.42, 0.9], [33.4, -0.42, 0.9], [33.9, -0.46, 1.02], [35.9, -0.46, 1.02], [36.4, -0.28, 0.74]] });
 const E_n = newton({ expr: [[28.5, "focus"], [31.7, "blank"], [33.0, "focus"], [36.5, "stern"]], handB: writing(28.5, 38.1) });
 const ShotE = () => (<><Garden /><Held a={E_me} side="f" off={[0, 0.03, 0]}><Apple p={[0, 0, 0]} s={1.3} /></Held><Doodle a={E_n} /><NewtonBook a={E_n} /><Quill a={E_n} /><Doodle a={E_me} /></>);
 
