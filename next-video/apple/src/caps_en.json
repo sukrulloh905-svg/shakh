@@ -1,0 +1,554 @@
+{
+"groups": [
+{
+"text": "What if",
+"start": 0,
+"end": 10
+},
+{
+"text": "an apple",
+"start": 10,
+"end": 30
+},
+{
+"text": "ate a",
+"start": 30,
+"end": 47
+},
+{
+"text": "tomato?",
+"start": 47,
+"end": 63
+},
+{
+"text": "What if",
+"start": 85,
+"end": 98
+},
+{
+"text": "this actually",
+"start": 98,
+"end": 121
+},
+{
+"text": "happened?",
+"start": 121,
+"end": 140
+},
+{
+"text": "First,",
+"start": 160,
+"end": 184
+},
+{
+"text": "the apple",
+"start": 184,
+"end": 199
+},
+{
+"text": "falls from",
+"start": 199,
+"end": 220
+},
+{
+"text": "a tree,",
+"start": 220,
+"end": 247
+},
+{
+"text": "then",
+"start": 247,
+"end": 259
+},
+{
+"text": "appears",
+"start": 259,
+"end": 279
+},
+{
+"text": "at his",
+"start": 279,
+"end": 292
+},
+{
+"text": "feet.",
+"start": 292,
+"end": 316
+},
+{
+"text": "And he",
+"start": 316,
+"end": 325
+},
+{
+"text": "runs towards",
+"start": 325,
+"end": 347
+},
+{
+"text": "the vegetable",
+"start": 347,
+"end": 366
+},
+{
+"text": "garden.",
+"start": 366,
+"end": 398
+},
+{
+"text": "But of",
+"start": 398,
+"end": 407
+},
+{
+"text": "course,",
+"start": 407,
+"end": 428
+},
+{
+"text": "there are",
+"start": 428,
+"end": 436
+},
+{
+"text": "guards there",
+"start": 436,
+"end": 476
+},
+{
+"text": "cucumbers",
+"start": 476,
+"end": 488
+},
+{
+"text": "and",
+"start": 488,
+"end": 506
+},
+{
+"text": "potatoes.",
+"start": 506,
+"end": 526
+},
+{
+"text": "Two",
+"start": 548,
+"end": 555
+},
+{
+"text": "muscular",
+"start": 555,
+"end": 578
+},
+{
+"text": "bodybuilders",
+"start": 578,
+"end": 607
+},
+{
+"text": "who go",
+"start": 607,
+"end": 624
+},
+{
+"text": "to the",
+"start": 624,
+"end": 632
+},
+{
+"text": "gym every",
+"start": 632,
+"end": 655
+},
+{
+"text": "day and",
+"start": 655,
+"end": 680
+},
+{
+"text": "train their",
+"start": 680,
+"end": 698
+},
+{
+"text": "muscles.",
+"start": 698,
+"end": 713
+},
+{
+"text": "Now things",
+"start": 731,
+"end": 752
+},
+{
+"text": "are about",
+"start": 752,
+"end": 768
+},
+{
+"text": "to get",
+"start": 768,
+"end": 782
+},
+{
+"text": "crazy!",
+"start": 782,
+"end": 819
+},
+{
+"text": "What do",
+"start": 819,
+"end": 829
+},
+{
+"text": "you think?",
+"start": 829,
+"end": 856
+},
+{
+"text": "Does this",
+"start": 856,
+"end": 871
+},
+{
+"text": "apple have",
+"start": 871,
+"end": 892
+},
+{
+"text": "enough courage",
+"start": 892,
+"end": 917
+},
+{
+"text": "to knock",
+"start": 917,
+"end": 936
+},
+{
+"text": "down these",
+"start": 936,
+"end": 953
+},
+{
+"text": "two",
+"start": 953,
+"end": 960
+},
+{
+"text": "bodybuilders",
+"start": 960,
+"end": 985
+},
+{
+"text": "and eat",
+"start": 985,
+"end": 1006
+},
+{
+"text": "a tomato",
+"start": 1006,
+"end": 1025
+},
+{
+"text": "to make",
+"start": 1025,
+"end": 1037
+},
+{
+"text": "a salad",
+"start": 1037,
+"end": 1053
+},
+{
+"text": "for lunch",
+"start": 1053,
+"end": 1070
+},
+{
+"text": "with plov?",
+"start": 1070,
+"end": 1093
+},
+{
+"text": "Well,",
+"start": 1111,
+"end": 1136
+},
+{
+"text": "of course,",
+"start": 1136,
+"end": 1163
+},
+{
+"text": "this apple",
+"start": 1163,
+"end": 1183
+},
+{
+"text": "isn't some",
+"start": 1183,
+"end": 1201
+},
+{
+"text": "kind of",
+"start": 1201,
+"end": 1211
+},
+{
+"text": "loser either.",
+"start": 1211,
+"end": 1251
+},
+{
+"text": "He sometimes",
+"start": 1251,
+"end": 1275
+},
+{
+"text": "went to",
+"start": 1275,
+"end": 1289
+},
+{
+"text": "internet cafés",
+"start": 1289,
+"end": 1315
+},
+{
+"text": "and",
+"start": 1315,
+"end": 1334
+},
+{
+"text": "played CS",
+"start": 1334,
+"end": 1356
+},
+{
+"text": "with",
+"start": 1356,
+"end": 1373
+},
+{
+"text": "S1mple,",
+"start": 1373,
+"end": 1397
+},
+{
+"text": "Molodoy,",
+"start": 1397,
+"end": 1423
+},
+{
+"text": "and Donk.",
+"start": 1423,
+"end": 1451
+},
+{
+"text": "This apple",
+"start": 1451,
+"end": 1471
+},
+{
+"text": "is no",
+"start": 1471,
+"end": 1484
+},
+{
+"text": "joke either.",
+"start": 1484,
+"end": 1522
+},
+{
+"text": "He's not",
+"start": 1522,
+"end": 1537
+},
+{
+"text": "some loser;",
+"start": 1537,
+"end": 1572
+},
+{
+"text": "he also",
+"start": 1572,
+"end": 1593
+},
+{
+"text": "shows off",
+"start": 1593,
+"end": 1614
+},
+{
+"text": "his muscles",
+"start": 1614,
+"end": 1633
+},
+{
+"text": "in his",
+"start": 1633,
+"end": 1649
+},
+{
+"text": "neighborhood!",
+"start": 1649,
+"end": 1682
+},
+{
+"text": "Now",
+"start": 1682,
+"end": 1706
+},
+{
+"text": "everything",
+"start": 1706,
+"end": 1720
+},
+{
+"text": "depends",
+"start": 1720,
+"end": 1736
+},
+{
+"text": "on you!",
+"start": 1736,
+"end": 1780
+},
+{
+"text": "If you",
+"start": 1780,
+"end": 1790
+},
+{
+"text": "subscribe",
+"start": 1790,
+"end": 1803
+},
+{
+"text": "and leave",
+"start": 1803,
+"end": 1826
+},
+{
+"text": "a like,",
+"start": 1826,
+"end": 1852
+},
+{
+"text": "he will",
+"start": 1852,
+"end": 1859
+},
+{
+"text": "finally be",
+"start": 1859,
+"end": 1882
+},
+{
+"text": "able to",
+"start": 1882,
+"end": 1897
+},
+{
+"text": "decide",
+"start": 1897,
+"end": 1910
+},
+{
+"text": "whether to",
+"start": 1910,
+"end": 1931
+},
+{
+"text": "make a",
+"start": 1931,
+"end": 1940
+},
+{
+"text": "salad for",
+"start": 1940,
+"end": 1960
+},
+{
+"text": "lunch with",
+"start": 1960,
+"end": 1979
+},
+{
+"text": "delicious",
+"start": 1979,
+"end": 1997
+},
+{
+"text": "plov",
+"start": 1997,
+"end": 2017
+},
+{
+"text": "or not!",
+"start": 2017,
+"end": 2056
+},
+{
+"text": "So",
+"start": 2056,
+"end": 2069
+},
+{
+"text": "subscribe for",
+"start": 2069,
+"end": 2096
+},
+{
+"text": "Part 2",
+"start": 2096,
+"end": 2113
+},
+{
+"text": "of the",
+"start": 2113,
+"end": 2120
+},
+{
+"text": "video and",
+"start": 2120,
+"end": 2144
+},
+{
+"text": "support our",
+"start": 2144,
+"end": 2166
+},
+{
+"text": "brother Apple",
+"start": 2166,
+"end": 2187
+},
+{
+"text": "so he",
+"start": 2187,
+"end": 2206
+},
+{
+"text": "can enjoy",
+"start": 2206,
+"end": 2223
+},
+{
+"text": "his plov",
+"start": 2223,
+"end": 2248
+},
+{
+"text": "with tomato",
+"start": 2248,
+"end": 2270
+},
+{
+"text": "salad!",
+"start": 2270,
+"end": 2288
+}
+]
+}
