@@ -9,7 +9,7 @@ import { LineSegments2 } from "three/examples/jsm/lines/LineSegments2.js";
 import { LineSegmentsGeometry } from "three/examples/jsm/lines/LineSegmentsGeometry.js";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
 import { Easing, useCurrentFrame, useVideoConfig, getInputProps } from "remotion";
-const Q = getInputProps() as { fx?: number; shadows?: number; sm?: number; lines?: number };   // переключатели для быстрого рендера без видеокарты
+const Q = getInputProps() as { fx?: number; shadows?: number; sm?: number; lines?: number; vk?: number };   // переключатели для быстрого рендера без видеокарты
 const SM = Q.sm ?? 2048;
 import { CH, CW, PLANE_H, PLANE_W, drawDoodle, Look, Pose } from "./doodle";
 
@@ -323,7 +323,9 @@ const camAt = (t: number, keys: CamKey[]) => {
 const CamRig: React.FC<{ pos: THREE.Vector3; look: THREE.Vector3; fov: number }> = ({ pos, look, fov }) => {
   const { camera } = useThree();
   const c = camera as THREE.PerspectiveCamera;
-  c.position.copy(pos); c.lookAt(look); c.fov = fov; c.near = 0.05; c.far = 40;
+  // вертикальный 9:16 — шире по вертикали, чтобы персонажи были того же размера в пикселях
+  const vf = c.aspect < 1 ? (2 * Math.atan(Math.tan((fov * Math.PI) / 360) * (Q.vk ?? 1.75)) * 180) / Math.PI : fov;
+  c.position.copy(pos); c.lookAt(look); c.fov = vf; c.near = 0.05; c.far = 40;
   c.updateProjectionMatrix();
   return null;
 };
